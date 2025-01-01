@@ -17,6 +17,10 @@ This is a blog page that will mark the beginning of my first blog.
 
 This is a blog that is automatized
 
+## This is a syncrhonization test
+
+Testing.
+
 ![Image Description](/images/blog_test_image%201.jpg)
 
 Links:
