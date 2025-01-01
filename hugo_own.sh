@@ -8,6 +8,7 @@ cd "$SCRIPT_DIR"
 # Set variables for Obsidian to Hugo copy
 sourcePath="/Users/alegarciy/Documents/Github-personal/Zettelkasten/Posts"
 destinationPath="/Users/alegarciy/Documents/Github-personal/halegarciy/content"
+hugoPath="/Users/alegarciy/Documents/Github-personal/halegarciy"
 
 # Set GitHub Repo
 myrepo="git@github.com:alegarciy/halegarciy.git"
@@ -50,19 +51,19 @@ rsync -av --delete "$sourcePath" "$destinationPath"
 
 # Step 3: Process Markdown files with Python script to handle image links
 echo "Processing image links in Markdown files..."
-if [ ! -f "images.py" ]; then
-    echo "Python script images.py not found."
+if [ ! -f "$hugoPath/images.py" ]; then
+    echo "Python script images.py not found in $SCRIPT_DIR."
     exit 1
 fi
 
-if ! python3 images.py; then
+if ! python3 "$hugoPath/images.py"; then
     echo "Failed to process image links."
     exit 1
 fi
 
 # Step 4: Build the Hugo site
 echo "Building the Hugo site..."
-if ! hugo; then
+if ! (cd "$hugoPath" && hugo); then
     echo "Hugo build failed."
     exit 1
 fi
