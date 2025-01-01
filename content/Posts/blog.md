@@ -13,6 +13,10 @@ My name is Alejandro and this is my first blog. Test
 
 This is a blog page that will mark the beginning of my first blog.
 
+## Project idea
+
+This is a blog that is automatized
+
 ![Image Description](/images/blog_test_image%201.jpg)
 
 Links:
