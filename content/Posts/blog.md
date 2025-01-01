@@ -7,8 +7,7 @@ tags:
 ---
 # First blog experience
 
-New message
-Second try
+My name is Alejandro and this is my first blog.
 
 ## Motives
 
