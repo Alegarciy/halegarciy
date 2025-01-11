@@ -133,5 +133,39 @@
 </content>
     </item>
     
+    <item>
+      <title></title>
+      <link>/posts/github-profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/github-profile/</guid>
+      <description>&lt;h1 id=&#34;github-profile&#34;&gt;Github Profile&lt;/h1&gt;
+&lt;h2 id=&#34;motives&#34;&gt;Motives&lt;/h2&gt;
+&lt;p&gt;I want to be able to make my Github page profile better looking, have a nice feel when people investigate my profile and projects. I want it to feel elegant and minimalistic, without too much overhead you have to go through. I watched a couple of profiles that implemented this ideas and I liked the approach enough to wanting to do it.&lt;/p&gt;
+&lt;h2 id=&#34;references--observations&#34;&gt;References &amp;amp;&amp;amp; Observations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Languages and Tools Section because of Dropdown is cool. &lt;a href=&#34;https://github.com/gautamkrishnar/gautamkrishnar&#34;&gt;Profile Gautamkrishnar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project-development&#34;&gt;Project Development&lt;/h2&gt;
+&lt;p&gt;This is a project that won&amp;rsquo;t take more than 2 weeks, so the t-shirt size i would say feels like a XS. I notice that the Readme.md files could be scripted and filled with information on them by creating cron jobs of actions or even trigger actions inside Github. That means there is a lot of programmability you can add to your profile, that will extend the profile view form a basic markup project to a bigger project to showcase your creativity. (This was discovered specifically in the Simon Willison&amp;rsquo;s article).&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;github-profile&#34;&gt;Github Profile&lt;/h1&gt;
+&lt;h2 id=&#34;motives&#34;&gt;Motives&lt;/h2&gt;
+&lt;p&gt;I want to be able to make my Github page profile better looking, have a nice feel when people investigate my profile and projects. I want it to feel elegant and minimalistic, without too much overhead you have to go through. I watched a couple of profiles that implemented this ideas and I liked the approach enough to wanting to do it.&lt;/p&gt;
+&lt;h2 id=&#34;references--observations&#34;&gt;References &amp;amp;&amp;amp; Observations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Languages and Tools Section because of Dropdown is cool. &lt;a href=&#34;https://github.com/gautamkrishnar/gautamkrishnar&#34;&gt;Profile Gautamkrishnar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project-development&#34;&gt;Project Development&lt;/h2&gt;
+&lt;p&gt;This is a project that won&amp;rsquo;t take more than 2 weeks, so the t-shirt size i would say feels like a XS. I notice that the Readme.md files could be scripted and filled with information on them by creating cron jobs of actions or even trigger actions inside Github. That means there is a lot of programmability you can add to your profile, that will extend the profile view form a basic markup project to a bigger project to showcase your creativity. (This was discovered specifically in the Simon Willison&amp;rsquo;s article).&lt;/p&gt;
+&lt;p&gt;Links: [[Project]] [[Career]]&lt;/p&gt;
+&lt;p&gt;[[public-university-repositories]]
+&lt;a href=&#34;https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile&#34;&gt;Github Profile&lt;/a&gt;
+&lt;a href=&#34;https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme&#34;&gt;Managing your profile README&lt;/a&gt;
+&lt;a href=&#34;https://github.com/abhisheknaiidu/awesome-github-profile-readme?tab=readme-ov-file&#34;&gt;awesome-github-profile-readme&lt;/a&gt;
+&lt;a href=&#34;https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/&#34;&gt;Simon Willison&amp;rsquo;s updating profile README&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;202408151232&lt;/p&gt;
+</content>
+    </item>
+    
   </channel>
 </rss>
