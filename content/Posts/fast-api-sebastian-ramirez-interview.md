@@ -1,3 +1,10 @@
+---
+title: FastAPI Background
+date: 2025-01-11
+draft: false
+tags:
+  - coding
+---
 # Sebastian Ramirez - the creator of FastAPI
 
 ## Motives

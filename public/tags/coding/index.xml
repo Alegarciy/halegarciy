@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Terminal</title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on Terminal</description>
+    <title>Coding on Terminal</title>
+    <link>/tags/coding/</link>
+    <description>Recent content in Coding on Terminal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="/tags/coding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FastAPI Background</title>
       <link>/posts/fast-api-sebastian-ramirez-interview/</link>
@@ -111,25 +111,6 @@
 &lt;p&gt;&lt;a href=&#34;https://dotfiles.github.io/&#34;&gt;Github dotfiles&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.webpro.nl/articles/getting-started-with-dotfiles&#34;&gt;Dotfiles Webpro - Lars Kappert&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;202408101453&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Start of a journey</title>
-      <link>/posts/blog/</link>
-      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/blog/</guid>
-      <description>&lt;h1 id=&#34;first-blog-experience&#34;&gt;First blog experience&lt;/h1&gt;
-&lt;p&gt;I think that sharing knowledge is something I&amp;rsquo;ve always wanted to do, no matter if its with my school friends, at work or on the internet through forums and disguise as another funny looking profile with a funny sounding name. I think that everyone is a bucket full of ideas waiting to be spilled and enjoyed by others like myself.&lt;/p&gt;
-&lt;p&gt;I would like to dedicate this block to all those good ideas that I need to share, and for those who were around and manage to inspire me, for non of them are only mine.&lt;/p&gt;</description>
-      <content>&lt;h1 id=&#34;first-blog-experience&#34;&gt;First blog experience&lt;/h1&gt;
-&lt;p&gt;I think that sharing knowledge is something I&amp;rsquo;ve always wanted to do, no matter if its with my school friends, at work or on the internet through forums and disguise as another funny looking profile with a funny sounding name. I think that everyone is a bucket full of ideas waiting to be spilled and enjoyed by others like myself.&lt;/p&gt;
-&lt;p&gt;I would like to dedicate this block to all those good ideas that I need to share, and for those who were around and manage to inspire me, for non of them are only mine.&lt;/p&gt;
-&lt;h2 id=&#34;motives&#34;&gt;Motives&lt;/h2&gt;
-&lt;p&gt;Conversations need to be recorded, and ideas are for being stored and told.&lt;/p&gt;
-&lt;p&gt;Links:&lt;/p&gt;
-&lt;p&gt;202412310152&lt;/p&gt;
 </content>
     </item>
     

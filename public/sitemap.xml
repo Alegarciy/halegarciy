@@ -2,24 +2,29 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/tags/opinions/</loc>
-    <lastmod>2025-01-02T00:00:00+00:00</lastmod>
+    <loc>/tags/coding/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/fast-api-sebastian-ramirez-interview/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/posts/starting-zettlekasten-note-system/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/opinions/</loc>
     <lastmod>2025-01-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/blog/</loc>
     <lastmod>2025-01-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-01-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/</loc>
-    <lastmod>2025-01-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/posts/fast-api-sebastian-ramirez-interview/</loc>
-  </url><url>
-    <loc>/posts/starting-zettlekasten-note-system/</loc>
   </url><url>
     <loc>/categories/</loc>
   </url>

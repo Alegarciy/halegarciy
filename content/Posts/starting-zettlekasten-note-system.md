@@ -1,3 +1,10 @@
+---
+title: My Zettlekasten
+date: 2025-01-11
+draft: false
+tags:
+  - coding
+---
 # Zettlekasten note taking system: First approach and review.
 
 ## How the idea of note taking was conceived
