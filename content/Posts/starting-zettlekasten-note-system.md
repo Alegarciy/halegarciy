@@ -5,7 +5,7 @@ draft: false
 tags:
   - coding
 ---
-# Zettlekasten note taking system: First approach and review.
+# Zettlekastens note taking system: First approach and review.
 
 ## How the idea of note taking was conceived
 
