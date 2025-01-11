@@ -5,7 +5,7 @@ draft: false
 tags:
   - opinions
 ---
-# Updated1- First blog experience
+# Updated1 hola mundo- First blog experience
 
 I think that sharing knowledge is something I've always wanted to do, no matter if its with my school friends, at work or on the internet through forums and disguise as another funny looking profile with a funny sounding name. I think that everyone is a bucket full of ideas waiting to be spilled and enjoyed by others like myself.
 
