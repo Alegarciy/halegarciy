@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Opinions on Alegarciy&#39;s Blog</title>
-    <link>//localhost:1313/tags/opinions/</link>
+    <link>/tags/opinions/</link>
     <description>Recent content in Opinions on Alegarciy&#39;s Blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 02 Jan 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/tags/opinions/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/tags/opinions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Start of a journey</title>
-      <link>//localhost:1313/posts/blog/</link>
+      <link>/posts/blog/</link>
       <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/posts/blog/</guid>
+      <guid>/posts/blog/</guid>
       <description>&lt;h1 id=&#34;first-blog-experience&#34;&gt;First blog experience&lt;/h1&gt;&#xA;&lt;p&gt;I think that sharing knowledge is something I&amp;rsquo;ve always wanted to do, no matter if its with my school friends, at work or on the internet through forums and disguise as another funny looking profile with a funny sounding name. I think that everyone is a bucket full of ideas waiting to be spilled and enjoyed by others like myself.&lt;/p&gt;&#xA;&lt;p&gt;I would like to dedicate this block to all those good ideas that I need to share, and for those who were around and manage to inspire me, for non of them are only mine.&lt;/p&gt;</description>
     </item>
   </channel>
