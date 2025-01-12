@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Sebastian Ramirez - the creator of FastAPI Motives This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.
+" />
+<meta name="keywords" content=", coding" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="//localhost:1313/posts/fast-api-sebastian-ramirez-interview/" />
+
+
+    <title>
+        
+            FastAPI Background :: Alegarciy&#39;s Blog  — A simple, retro theme for Hugo
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.244183cde1a38e0b08f82c11791181288f9aac1cc9618cd6f4e9e7710c5768ba.css" integrity="sha256-JEGDzeGjjgsI&#43;CwReRGBKI&#43;arBzJYYzW9OnncQxXaLo=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="FastAPI Background">
+  <meta itemprop="description" content="Sebastian Ramirez - the creator of FastAPI Motives This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.">
+  <meta itemprop="datePublished" content="2025-01-11T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-01-11T00:00:00+00:00">
+  <meta itemprop="wordCount" content="735">
+  <meta itemprop="keywords" content="Coding">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="FastAPI Background">
+  <meta name="twitter:description" content="Sebastian Ramirez - the creator of FastAPI Motives This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.">
+
+
+
+
+
+
+
+    <meta property="article:published_time" content="2025-01-11 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                Terminal</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+  <main class="post">
+
+    <div class="post-info">
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        4 minutes
+
+        
+      </p>
+    </div>
+
+    <article>
+      <h1 class="post-title">
+        <a href="//localhost:1313/posts/fast-api-sebastian-ramirez-interview/">FastAPI Background</a>
+      </h1>
+
+      
+
+      
+
+      
+
+      <div class="post-content">
+        <h1 id="sebastian-ramirez---the-creator-of-fastapi">Sebastian Ramirez - the creator of FastAPI</h1>
+<h2 id="motives">Motives</h2>
+<p>This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.</p>
+<h2 id="why-would-you-create-a-framework">Why would you create a framework</h2>
+<p>Sebastian Ramirez always thought that if you were to build a product you should always look out for the right tools, avoid &ldquo;re-inventing the wheel&rdquo; as many software engineers say nowadays. After three years of avoiding to build the idea, it seem like the solution was something he wished not to develop but needed it.</p>
+<h2 id="features-that-inspired-fastapi">Features that inspired FastAPI</h2>
+<p>Sebastian Ramirez had a couple of ideas on how the DX (Developer Experience) should feel for the framework based on other Python frameworks he know like DJango. Some of the features he wanted to develop were:</p>
+<ul>
+<li>Automated documentation of the API (DJango)</li>
+<li>Swagger standardized documentation (SwaggerUI)</li>
+<li>Eliminate the code duplication (Decorator Hell)</li>
+<li>Autocomplete and auto-fill spaces (Typescript)</li>
+<li>Inspect type (Python Language)</li>
+</ul>
+<p>How Sebastian Ramirez avoided to re-invent the wheel was by basing his wishes of the framework and tools based on already web standards. He grabbed the standards already defined and made it so the developers had a better experience based on his own wishes to build better API frameworks.</p>
+<blockquote>
+<p>&ldquo;Always focus on solving problems, that will be your guidance&rdquo; - Sebastian Ramirez</p>
+</blockquote>
+<h2 id="why-do-it-in-python">Why do it in Python?</h2>
+<p>By utilizing the Python framework you could check the autocomplete with the typing, but furthermore you could use the inspect and typing feature to create the documentation (since you have the out generated typing description) and run type validation of with the same built-in function of the library like &ldquo;<em>typing</em>&rdquo; and &ldquo;<em>inspect</em>&rdquo;.</p>
+<p>Python is also a language for LLMs (Large Language Models) and machine learning. So for the developers that gravitate near those technologies for him didn&rsquo;t seem too convenient to switch every time between technologies. With FastAPI you will automatically access the constraints of utilizing good types in python, good code practices of typed python and you will have benefits like:</p>
+<ul>
+<li>Type autocomplete</li>
+<li>Input validation</li>
+<li>Output validation</li>
+</ul>
+<h2 id="typed-vs-untyped-systems">Typed vs Untyped Systems</h2>
+<p>Normally in Sebastian&rsquo;s experience, the plugin composition and the endless ladder of decorators made it impossible for types to be well defined and cleared for the development experience. So Python users often would neglect the typing (micro seconds) it takes in exchange for a much worst without types codebase, but based on Sebastian&rsquo;s perspective code efficiency and preciseness would be greatly increased if Python developers took the time to focus down in putting typing in specific places that would be require for recreating the good experience (mostly function variable declarations).</p>
+<blockquote>
+<p>&ldquo;Making the code more intuitive, adds pleasure for the development experience&rdquo; - Sebastian Ramirez</p>
+</blockquote>
+<h2 id="focus-on-a-problem-mentality">Focus on a problem mentality</h2>
+<p>So the Sebastian&rsquo;s approach to learning is always focus on a problem. Even though there is a lot of hype going around amazing ML tools and amazing ML software nowadays, there are still problems that are easy to solve waiting to be solved. Many of us focus too much on the big picture and follow trends without realizing that some of the problems you could be helping to solve are the easiest of all.</p>
+<p>For Sebastian the path to learning is regardless of the background you can help build solutions. You are free to help others figure out problems and by creating that run way impact will come by itself for him, impact is only the product of a good solution. You shouldn&rsquo;t focus on the outcome, but in the daily show up of creating a better solution for the problem, tempering the blade over and over until it is refined.</p>
+<p>Even the FastAPI framework after being utilized in many places like Meta, Nuclear Reactors and some other really important places&hellip; it is still pre version 1.0. His mentality and approach to problems is always find a better way, a smarter solution a new suggestions that even though is easy or hard it will help the solution have that much impact.</p>
+<p>Links: [[Coding]] [[python]]</p>
+<p>202409020000</p>
+
+      </div>
+    </article>
+
+    <hr />
+
+    <div class="post-info">
+      
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="//localhost:1313/tags/coding/">coding</a></span>
+        
+    </p>
+
+      
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        735 Words
+      </p>
+
+      <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8" y1="2" x2="8" y2="6"></line>
+          <line x1="3" y1="10" x2="21" y2="10"></line>
+        </svg>
+        
+          2025-01-10 18:00
+        
+
+         
+          
+        
+      </p>
+    </div>
+
+    
+    <div class="pagination">
+        
+        <div class="pagination__title">
+            <span class="pagination__title-h">Read other posts</span>
+            <hr />
+        </div>
+        
+
+        <div class="pagination__buttons">
+            
+
+            
+            <span class="button next">
+                <a href="//localhost:1313/posts/starting-zettlekasten-note-system/">
+                    <span class="button__text">My Zettlekasten</span>
+                    <span class="button__icon">→</span>
+                </a>
+            </span>
+            
+        </div>
+    </div>
+
+
+    
+
+    
+
+    
+
+  </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.e89fda0f29b95d33f6f4224dd9e5cf69d84aff3818be2b0d73e731689cc374261b016d17d46f8381962fb4a1577ba3017b1f23509d894f6e66431f988c00889e.js" integrity="sha512-6J/aDym5XTP29CJN2eXPadhK/zgYvisNc&#43;cxaJzDdCYbAW0X1G&#43;DgZYvtKFXe6MBex8jUJ2JT25mQx&#43;YjACIng=="></script>
+
+
+
+
+    </body>
+</html>
