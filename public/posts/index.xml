@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Alegarciy&#39;s Blog</title>
+    <link>//localhost:1313/posts/</link>
+    <description>Recent content in Posts on Alegarciy&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FastAPI Background</title>
+      <link>//localhost:1313/posts/fast-api-sebastian-ramirez-interview/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/fast-api-sebastian-ramirez-interview/</guid>
+      <description>&lt;h1 id=&#34;sebastian-ramirez---the-creator-of-fastapi&#34;&gt;Sebastian Ramirez - the creator of FastAPI&lt;/h1&gt;
+&lt;h2 id=&#34;motives&#34;&gt;Motives&lt;/h2&gt;
+&lt;p&gt;This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;sebastian-ramirez---the-creator-of-fastapi&#34;&gt;Sebastian Ramirez - the creator of FastAPI&lt;/h1&gt;
+&lt;h2 id=&#34;motives&#34;&gt;Motives&lt;/h2&gt;
+&lt;p&gt;This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.&lt;/p&gt;
+&lt;h2 id=&#34;why-would-you-create-a-framework&#34;&gt;Why would you create a framework&lt;/h2&gt;
+&lt;p&gt;Sebastian Ramirez always thought that if you were to build a product you should always look out for the right tools, avoid &amp;ldquo;re-inventing the wheel&amp;rdquo; as many software engineers say nowadays. After three years of avoiding to build the idea, it seem like the solution was something he wished not to develop but needed it.&lt;/p&gt;
+&lt;h2 id=&#34;features-that-inspired-fastapi&#34;&gt;Features that inspired FastAPI&lt;/h2&gt;
+&lt;p&gt;Sebastian Ramirez had a couple of ideas on how the DX (Developer Experience) should feel for the framework based on other Python frameworks he know like DJango. Some of the features he wanted to develop were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automated documentation of the API (DJango)&lt;/li&gt;
+&lt;li&gt;Swagger standardized documentation (SwaggerUI)&lt;/li&gt;
+&lt;li&gt;Eliminate the code duplication (Decorator Hell)&lt;/li&gt;
+&lt;li&gt;Autocomplete and auto-fill spaces (Typescript)&lt;/li&gt;
+&lt;li&gt;Inspect type (Python Language)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;How Sebastian Ramirez avoided to re-invent the wheel was by basing his wishes of the framework and tools based on already web standards. He grabbed the standards already defined and made it so the developers had a better experience based on his own wishes to build better API frameworks.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Always focus on solving problems, that will be your guidance&amp;rdquo; - Sebastian Ramirez&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;why-do-it-in-python&#34;&gt;Why do it in Python?&lt;/h2&gt;
+&lt;p&gt;By utilizing the Python framework you could check the autocomplete with the typing, but furthermore you could use the inspect and typing feature to create the documentation (since you have the out generated typing description) and run type validation of with the same built-in function of the library like &amp;ldquo;&lt;em&gt;typing&lt;/em&gt;&amp;rdquo; and &amp;ldquo;&lt;em&gt;inspect&lt;/em&gt;&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Python is also a language for LLMs (Large Language Models) and machine learning. So for the developers that gravitate near those technologies for him didn&amp;rsquo;t seem too convenient to switch every time between technologies. With FastAPI you will automatically access the constraints of utilizing good types in python, good code practices of typed python and you will have benefits like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Type autocomplete&lt;/li&gt;
+&lt;li&gt;Input validation&lt;/li&gt;
+&lt;li&gt;Output validation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;typed-vs-untyped-systems&#34;&gt;Typed vs Untyped Systems&lt;/h2&gt;
+&lt;p&gt;Normally in Sebastian&amp;rsquo;s experience, the plugin composition and the endless ladder of decorators made it impossible for types to be well defined and cleared for the development experience. So Python users often would neglect the typing (micro seconds) it takes in exchange for a much worst without types codebase, but based on Sebastian&amp;rsquo;s perspective code efficiency and preciseness would be greatly increased if Python developers took the time to focus down in putting typing in specific places that would be require for recreating the good experience (mostly function variable declarations).&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Making the code more intuitive, adds pleasure for the development experience&amp;rdquo; - Sebastian Ramirez&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;focus-on-a-problem-mentality&#34;&gt;Focus on a problem mentality&lt;/h2&gt;
+&lt;p&gt;So the Sebastian&amp;rsquo;s approach to learning is always focus on a problem. Even though there is a lot of hype going around amazing ML tools and amazing ML software nowadays, there are still problems that are easy to solve waiting to be solved. Many of us focus too much on the big picture and follow trends without realizing that some of the problems you could be helping to solve are the easiest of all.&lt;/p&gt;
+&lt;p&gt;For Sebastian the path to learning is regardless of the background you can help build solutions. You are free to help others figure out problems and by creating that run way impact will come by itself for him, impact is only the product of a good solution. You shouldn&amp;rsquo;t focus on the outcome, but in the daily show up of creating a better solution for the problem, tempering the blade over and over until it is refined.&lt;/p&gt;
+&lt;p&gt;Even the FastAPI framework after being utilized in many places like Meta, Nuclear Reactors and some other really important places&amp;hellip; it is still pre version 1.0. His mentality and approach to problems is always find a better way, a smarter solution a new suggestions that even though is easy or hard it will help the solution have that much impact.&lt;/p&gt;
+&lt;p&gt;Links: [[Coding]] [[python]]&lt;/p&gt;
+&lt;p&gt;202409020000&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>My Zettlekasten</title>
+      <link>//localhost:1313/posts/starting-zettlekasten-note-system/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/starting-zettlekasten-note-system/</guid>
+      <description>&lt;h1 id=&#34;zettlekastens-note-taking-system-first-approach-and-review&#34;&gt;Zettlekastens note taking system: First approach and review.&lt;/h1&gt;
+&lt;h2 id=&#34;how-the-idea-of-note-taking-was-conceived&#34;&gt;How the idea of note taking was conceived&lt;/h2&gt;
+&lt;p&gt;At first, I started taking notes on paper since 2023 in an informal manner. I noticed that I became dependent on them, more so than I expected at first always searching for notes i didn&amp;rsquo;t record and learnings I must have forgotten because of my long-term retention capacity. Finally this year (2024), I decided to commit myself to have a formal approach on note taking.&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;zettlekastens-note-taking-system-first-approach-and-review&#34;&gt;Zettlekastens note taking system: First approach and review.&lt;/h1&gt;
+&lt;h2 id=&#34;how-the-idea-of-note-taking-was-conceived&#34;&gt;How the idea of note taking was conceived&lt;/h2&gt;
+&lt;p&gt;At first, I started taking notes on paper since 2023 in an informal manner. I noticed that I became dependent on them, more so than I expected at first always searching for notes i didn&amp;rsquo;t record and learnings I must have forgotten because of my long-term retention capacity. Finally this year (2024), I decided to commit myself to have a formal approach on note taking.&lt;/p&gt;
+&lt;p&gt;As I was searching for references on my investigation, a nice reference was found of a particular devops self-thought man previously a nurse and out of passion of being a &amp;ldquo;knowledge worker&amp;rdquo; became a developer operations engineer. This man&amp;rsquo;s name is &lt;a href=&#34;https://mischavandenburg.com/&#34;&gt;&amp;ldquo;Mischa van den Burg&amp;rdquo;&lt;/a&gt;. He has a zettlekasten system on his own, and I decided to follow his steps and set up my own based in some of the features he developed.&lt;/p&gt;
+&lt;h2 id=&#34;choosing-some-tools&#34;&gt;Choosing some tools&lt;/h2&gt;
+&lt;p&gt;I found myself always craving for &lt;code&gt;frictionless feature&lt;/code&gt;, even for note taking. A &lt;code&gt;frictionless feature&lt;/code&gt; is a tool, routine or any sort of idea that makes my life easier without putting a lot of effort on learning the habit of it. It should feel like it was always required and when you manage to do it; it should feel like it always was there.&lt;/p&gt;
+&lt;p&gt;For me, a &lt;code&gt;frictionless feature&lt;/code&gt; at first was the white paper approach. The mental effort for &lt;em&gt;recording new findings&lt;/em&gt; and information is non existent and is flexibility is impressive (adding color pencils feels great!). But the white paper approach really lacked in the &lt;em&gt;recovering mechanism&lt;/em&gt;. For this same reason I manage to create a better automatized approach using Neovim fuzzy finder features + Obsidian&amp;rsquo;s graph viewer.&lt;/p&gt;
+&lt;p&gt;Neovim is a great IDE for development mostly but can be configure to search between notes and making great experience for writing code. Since I have a developer background I decided to create a &amp;ldquo;Neovim note taking system&amp;rdquo; approach based on what Mischa van den Burg suggested himself. Obsidian was a note taking system that has interesting graphical plugins and visualizations, that will provide more aesthetic note visualizations.&lt;/p&gt;
+&lt;h3 id=&#34;removing-friction-for-the-note-taking-system&#34;&gt;Removing friction for the note taking system&lt;/h3&gt;
+&lt;p&gt;Once I had figured out which tools would be useful for the system, I had to reduce as much friction as possible. &lt;code&gt;Friction&lt;/code&gt; for me, is the antagonist of proactivity. Reducing effort contributes to creating action, by facilitating the person to not stall through tedious routines.&lt;/p&gt;
+&lt;p&gt;A easy technical solution for reducing the undesirable friction was to create a serious of small automatization around the interaction specifically of creating notes. The biggest gap I thought needed to be attended as soon as possible was the &lt;em&gt;recording new findings&lt;/em&gt; mechanism. Opening an application is a major friction point for me as a user, so creating a &lt;code&gt;shortcut&lt;/code&gt; for it that will create a note structure with an specific &lt;code&gt;unique identifier&lt;/code&gt; per note is valuable.&lt;/p&gt;
+&lt;p&gt;As a solution, I manage to investigate a proper automatized small system with &lt;code&gt;bash files&lt;/code&gt;. For this system, my  previous experience had thought me that many bash files tend to entropy real quick. Given that a good solution, most be maintainable and understandable for a long time, I decided to create a personal folder for all &lt;code&gt;dotfiles&lt;/code&gt; solution. A dotfile based on what is posted on &lt;a href=&#34;https://github.com/topics/dotfiles?o=desc&amp;amp;s=updated&#34;&gt;Github dotfile topic&lt;/a&gt; it is:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Legend goes, that dotfiles were invented when ls used to skip files and directories starting with a . (dot). As a result, files that begin with such a character were not shown when listing using ls — i.e. it was a &amp;ldquo;hidden&amp;rdquo; file. Since dotfiles are ususually user-specific, a predestined place for them is the $HOME directory. Commonly used files are for example: &lt;code&gt;.bashrc&lt;/code&gt;, &lt;code&gt;.zshrc&lt;/code&gt; or &lt;code&gt;.vimrc&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;defining-a-documentation-strategy&#34;&gt;Defining a documentation strategy&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Taking notes is to live with intention - Mischa van den Burg&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;I am a forgetful person, and I am in a moment in my life were ideas are a big part of me. This quote above, resonated with how i felt for the longest time, forgetting was a painful act in itself since valuable thoughts you cherish suddenly banish and you don&amp;rsquo;t notice them when they go away. I want to record thoughts, they don&amp;rsquo;t need to have an specific structure or make much sense but I want to be the craftsman of my empire of ideas.&lt;/p&gt;
+&lt;h3 id=&#34;the-para-method-an-informal-idea-of-indexing-logs&#34;&gt;The PARA method: An informal idea of indexing logs&lt;/h3&gt;
+&lt;p&gt;For the PARA methods, it is a simple note taking system, that creates a couple of concepts around how files should be ordered into a limited categories of folders. This folder are the (P)rojects, (A)reas, (R)esources, (A)rchives. Each of them has a use:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Projects: &amp;ldquo;A project is a sequence of tasks you need to accomplish in order to achieve a certain outcome - David Allan&amp;rdquo; (3 months - 12 months)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Areas: It involves ongoing engagements. It places a particular important role in your life. Are areas particularly important to your life like health, sports, family, &amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Resources: Is a collection of information, that you expect to be useful. It can be hobbies, investigations, interests, &amp;hellip;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Archive: Searching for notes, old notes will appear and you make connections. This is information can be logged as &amp;ldquo;old&amp;rdquo;, but could appear on a search for a helping hand some day.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;what-is-the-origin-of-a-log-small-story&#34;&gt;What is the origin of a log (small story)&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A log started life as a lump of wood such as you might throw on a fire. And it still is - sometimes. When sailors wanted to know how fast they were going, they would throw over the stern a log tied to a bit of string with regularly spaced knots in it. By counting the number of knots that went out in a fixed time, they would know their speed - in knots, of course. A navigator would want to have a regular record of this speed, so that he could calculate how fast the ship was travelling than thus roughly where he was. So the speed was written down, initially on a slate but later in a book, which, since it recorded the log measurements, was called the log. - By &lt;a href=&#34;https://www.quora.com/Why-are-computer-logfiles-called-so&#34;&gt;Alec Cawley&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Links: [[Notes]] [[Research]]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mischavandenburg.com/zet/neovim-zettelkasten/&#34;&gt;My Neovim Zettelkasten - Mischa van den Burg&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://rwx.gg/tools/linux/tasks/dotfiles/bash/&#34;&gt;Dotfiles - Rob Muhlestein (rwxrob)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://dotfiles.github.io/&#34;&gt;Github dotfiles&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.webpro.nl/articles/getting-started-with-dotfiles&#34;&gt;Dotfiles Webpro - Lars Kappert&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;202408101453&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title>Start of a journey</title>
+      <link>//localhost:1313/posts/blog/</link>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/blog/</guid>
+      <description>&lt;h1 id=&#34;first-blog-experience&#34;&gt;First blog experience&lt;/h1&gt;
+&lt;p&gt;I think that sharing knowledge is something I&amp;rsquo;ve always wanted to do, no matter if its with my school friends, at work or on the internet through forums and disguise as another funny looking profile with a funny sounding name. I think that everyone is a bucket full of ideas waiting to be spilled and enjoyed by others like myself.&lt;/p&gt;
+&lt;p&gt;I would like to dedicate this block to all those good ideas that I need to share, and for those who were around and manage to inspire me, for non of them are only mine.&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;first-blog-experience&#34;&gt;First blog experience&lt;/h1&gt;
+&lt;p&gt;I think that sharing knowledge is something I&amp;rsquo;ve always wanted to do, no matter if its with my school friends, at work or on the internet through forums and disguise as another funny looking profile with a funny sounding name. I think that everyone is a bucket full of ideas waiting to be spilled and enjoyed by others like myself.&lt;/p&gt;
+&lt;p&gt;I would like to dedicate this block to all those good ideas that I need to share, and for those who were around and manage to inspire me, for non of them are only mine.&lt;/p&gt;
+&lt;h2 id=&#34;motives&#34;&gt;Motives&lt;/h2&gt;
+&lt;p&gt;Conversations need to be recorded, and ideas are for being stored and told.&lt;/p&gt;
+&lt;p&gt;Links:&lt;/p&gt;
+&lt;p&gt;202412310152&lt;/p&gt;
+</content>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>//localhost:1313/posts/github-profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//localhost:1313/posts/github-profile/</guid>
+      <description>&lt;h1 id=&#34;github-profile&#34;&gt;Github Profile&lt;/h1&gt;
+&lt;h2 id=&#34;motives&#34;&gt;Motives&lt;/h2&gt;
+&lt;p&gt;I want to be able to make my Github page profile better looking, have a nice feel when people investigate my profile and projects. I want it to feel elegant and minimalistic, without too much overhead you have to go through. I watched a couple of profiles that implemented this ideas and I liked the approach enough to wanting to do it.&lt;/p&gt;
+&lt;h2 id=&#34;references--observations&#34;&gt;References &amp;amp;&amp;amp; Observations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Languages and Tools Section because of Dropdown is cool. &lt;a href=&#34;https://github.com/gautamkrishnar/gautamkrishnar&#34;&gt;Profile Gautamkrishnar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project-development&#34;&gt;Project Development&lt;/h2&gt;
+&lt;p&gt;This is a project that won&amp;rsquo;t take more than 2 weeks, so the t-shirt size i would say feels like a XS. I notice that the Readme.md files could be scripted and filled with information on them by creating cron jobs of actions or even trigger actions inside Github. That means there is a lot of programmability you can add to your profile, that will extend the profile view form a basic markup project to a bigger project to showcase your creativity. (This was discovered specifically in the Simon Willison&amp;rsquo;s article).&lt;/p&gt;</description>
+      <content>&lt;h1 id=&#34;github-profile&#34;&gt;Github Profile&lt;/h1&gt;
+&lt;h2 id=&#34;motives&#34;&gt;Motives&lt;/h2&gt;
+&lt;p&gt;I want to be able to make my Github page profile better looking, have a nice feel when people investigate my profile and projects. I want it to feel elegant and minimalistic, without too much overhead you have to go through. I watched a couple of profiles that implemented this ideas and I liked the approach enough to wanting to do it.&lt;/p&gt;
+&lt;h2 id=&#34;references--observations&#34;&gt;References &amp;amp;&amp;amp; Observations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Languages and Tools Section because of Dropdown is cool. &lt;a href=&#34;https://github.com/gautamkrishnar/gautamkrishnar&#34;&gt;Profile Gautamkrishnar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project-development&#34;&gt;Project Development&lt;/h2&gt;
+&lt;p&gt;This is a project that won&amp;rsquo;t take more than 2 weeks, so the t-shirt size i would say feels like a XS. I notice that the Readme.md files could be scripted and filled with information on them by creating cron jobs of actions or even trigger actions inside Github. That means there is a lot of programmability you can add to your profile, that will extend the profile view form a basic markup project to a bigger project to showcase your creativity. (This was discovered specifically in the Simon Willison&amp;rsquo;s article).&lt;/p&gt;
+&lt;p&gt;Links: [[Project]] [[Career]]&lt;/p&gt;
+&lt;p&gt;[[public-university-repositories]]
+&lt;a href=&#34;https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/about-your-profile&#34;&gt;Github Profile&lt;/a&gt;
+&lt;a href=&#34;https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/customizing-your-profile/managing-your-profile-readme&#34;&gt;Managing your profile README&lt;/a&gt;
+&lt;a href=&#34;https://github.com/abhisheknaiidu/awesome-github-profile-readme?tab=readme-ov-file&#34;&gt;awesome-github-profile-readme&lt;/a&gt;
+&lt;a href=&#34;https://simonwillison.net/2020/Jul/10/self-updating-profile-readme/&#34;&gt;Simon Willison&amp;rsquo;s updating profile README&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;202408151232&lt;/p&gt;
+</content>
+    </item>
+    
+  </channel>
+</rss>
