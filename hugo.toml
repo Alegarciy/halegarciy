@@ -14,7 +14,7 @@ enableGitInfo = true
 
   BookTheme = 'light'
   BookToC = true
-  BookSection = 'posts'
+  BookSection = 'Posts'
 
   BookRepo = 'https://github.com/Alegarciy/halegarciy'
   BookCommitPath = 'commit'
