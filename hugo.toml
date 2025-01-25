@@ -7,14 +7,14 @@ theme = "hugo-book"
 paginate = 5
 
 # Hugo Books configurations
-disablePathToLower = true
+disablePathToLower = false
 enableGitInfo = true
 
 [params]
 
   BookTheme = 'light'
   BookToC = true
-  BookSection = 'Posts'
+  BookSection = 'posts'
 
   BookRepo = 'https://github.com/Alegarciy/halegarciy'
   BookCommitPath = 'commit'
