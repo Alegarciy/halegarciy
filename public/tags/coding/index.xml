@@ -1,17 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Coding on Alegarciy's Blog</title><link>//localhost:1313/tags/coding/</link><description>Recent content in Coding on Alegarciy's Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 11 Jan 2025 13:09:06 -0600</lastBuildDate><atom:link href="//localhost:1313/tags/coding/index.xml" rel="self" type="application/rss+xml"/><item><title>FastAPI Background</title><link>//localhost:1313/Posts/fast-api-sebastian-ramirez-interview/</link><pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate><guid>//localhost:1313/Posts/fast-api-sebastian-ramirez-interview/</guid><description>&lt;h1 id="sebastian-ramirez---the-creator-of-fastapi">
- Sebastian Ramirez - the creator of FastAPI
- &lt;a class="anchor" href="#sebastian-ramirez---the-creator-of-fastapi">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="motives">
- Motives
- &lt;a class="anchor" href="#motives">#&lt;/a>
-&lt;/h2>
-&lt;p>This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.&lt;/p></description></item><item><title>My Zettlekasten</title><link>//localhost:1313/Posts/starting-zettlekasten-note-system/</link><pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate><guid>//localhost:1313/Posts/starting-zettlekasten-note-system/</guid><description>&lt;h1 id="zettlekastens-note-taking-system-first-approach-and-review">
- Zettlekastens note taking system: First approach and review.
- &lt;a class="anchor" href="#zettlekastens-note-taking-system-first-approach-and-review">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="how-the-idea-of-note-taking-was-conceived">
- How the idea of note taking was conceived
- &lt;a class="anchor" href="#how-the-idea-of-note-taking-was-conceived">#&lt;/a>
-&lt;/h2>
-&lt;p>At first, I started taking notes on paper since 2023 in an informal manner. I noticed that I became dependent on them, more so than I expected at first always searching for notes i didn&amp;rsquo;t record and learnings I must have forgotten because of my long-term retention capacity. Finally this year (2024), I decided to commit myself to have a formal approach on note taking.&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coding on Alegarciy Blog</title>
+    <link>//localhost:1313/tags/coding/</link>
+    <description>Recent content in Coding on Alegarciy Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jan 2025 13:09:06 -0600</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FastAPI Background</title>
+      <link>//localhost:1313/Posts/fast-api-sebastian-ramirez-interview/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/Posts/fast-api-sebastian-ramirez-interview/</guid>
+      <description>&lt;h1 id=&#34;sebastian-ramirez---the-creator-of-fastapi&#34;&gt;&#xA;  Sebastian Ramirez - the creator of FastAPI&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#sebastian-ramirez---the-creator-of-fastapi&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;motives&#34;&gt;&#xA;  Motives&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#motives&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My Zettlekasten</title>
+      <link>//localhost:1313/Posts/starting-zettlekasten-note-system/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/Posts/starting-zettlekasten-note-system/</guid>
+      <description>&lt;h1 id=&#34;zettlekastens-note-taking-system-first-approach-and-review&#34;&gt;&#xA;  Zettlekastens note taking system: First approach and review.&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#zettlekastens-note-taking-system-first-approach-and-review&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;how-the-idea-of-note-taking-was-conceived&#34;&gt;&#xA;  How the idea of note taking was conceived&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#how-the-idea-of-note-taking-was-conceived&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;At first, I started taking notes on paper since 2023 in an informal manner. I noticed that I became dependent on them, more so than I expected at first always searching for notes i didn&amp;rsquo;t record and learnings I must have forgotten because of my long-term retention capacity. Finally this year (2024), I decided to commit myself to have a formal approach on note taking.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

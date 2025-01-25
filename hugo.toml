@@ -12,53 +12,12 @@ enableGitInfo = true
 
 [params]
 
-  BookTheme = 'dark'
+  BookTheme = 'light'
   BookToC = true
-  BookSection = 'docs'
+  BookSection = 'posts'
 
   BookRepo = 'https://github.com/Alegarciy/halegarciy'
   BookCommitPath = 'commit'
 
+  BookSearch = true
 
-
-
-[params.twitter]
-  # set Twitter handles for Twitter cards
-  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
-  # do not include @
-  creator = ""
-  site = ""
-
-[languages]
-  [languages.en]
-    languageName = "English"
-    title = "Alegarciy's Blog"
-
-    [languages.en.params]
-      subtitle = "A simple, retro theme for Hugo"
-      owner = ""
-      keywords = ""
-      copyright = ""
-      menuMore = "Show more"
-      readMore = "Read more"
-      readOtherPosts = "Read other posts"
-      newerPosts = "Newer posts"
-      olderPosts = "Older posts"
-      missingContentMessage = "Page not found..."
-      missingBackButtonLabel = "Back to home page"
-      minuteReadingTime = "min read"
-      words = "words"
-
-      [languages.en.params.logo]
-        logoText = "Terminal"
-        logoHomeLink = "/"
-
-      # [languages.en.menu]
-      #   [[languages.en.menu.main]]
-      #     identifier = "about"
-      #     name = "About"
-      #     url = "/about"
-      #   [[languages.en.menu.main]]
-      #     identifier = "showcase"
-      #     name = "Showcase"
-      #     url = "/showcase"

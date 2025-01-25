@@ -1,6 +1,6 @@
 {
-  "name": "Alegarciy's Blog",
-  "short_name": "Alegarciy's Blog",
+  "name": "Alegarciy Blog",
+  "short_name": "Alegarciy Blog",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
