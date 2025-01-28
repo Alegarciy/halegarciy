@@ -2,31 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/</loc>
-    <lastmod>2025-01-25T01:11:11-06:00</lastmod>
+    <loc>/</loc>
+    <lastmod>2025-01-28T15:48:30-06:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/docs/section/</loc>
+    <loc>/docs/section/</loc>
+    <lastmod>2025-01-28T15:48:30-06:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/coding/</loc>
+    <loc>/tags/coding/</loc>
     <lastmod>2025-01-28T15:36:08-06:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/fast-api-sebastian-ramirez-interview/</loc>
+    <loc>/posts/fast-api-sebastian-ramirez-interview/</loc>
     <lastmod>2025-01-11T12:52:48-06:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/small-projects/starting-zettlekasten-note-system/</loc>
+    <loc>/posts/small-projects/starting-zettlekasten-note-system/</loc>
     <lastmod>2025-01-28T15:36:08-06:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2025-01-28T15:36:08-06:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2025-01-28T15:36:08-06:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/posts/small-projects/github-profile/</loc>
+    <loc>/posts/small-projects/github-profile/</loc>
     <lastmod>2025-01-28T15:36:08-06:00</lastmod>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>/categories/</loc>
   </url><url>
-    <loc>//localhost:1313/docs/</loc>
+    <loc>/docs/</loc>
+    <lastmod>2025-01-28T15:48:30-06:00</lastmod>
   </url>
 </urlset>
