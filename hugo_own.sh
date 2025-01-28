@@ -49,6 +49,24 @@ fi
 
 rsync -av --delete "$sourcePath" "$destinationPath"
 
+# New section: Create _index.md files in each directory
+echo "Creating _index.md files in directories..."
+find "$destinationPath/Posts" -type d -exec sh -c '
+    if [ ! -f "$1/_index.md" ]; then
+        dir_name=$(basename "$1")
+        cat > "$1/_index.md" << EOF
+---
+title: "${dir_name}"
+weight: 1
+bookCollapseSection: true
+---
+
+${dir_name} section
+EOF
+        echo "Created _index.md in $1"
+    fi
+' sh {} \;
+
 # Step 3: Process Markdown files with Python script to handle image links
 echo "Processing image links in Markdown files..."
 if [ ! -f "$hugoPath/images.py" ]; then

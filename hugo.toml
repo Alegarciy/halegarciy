@@ -21,3 +21,8 @@ enableGitInfo = true
 
   BookSearch = true
 
+  # (Optional) Set this to true to enable collapsible menu
+  BookMenuBundle = true
+  
+  # (Optional) If you want the sections to be collapsed by default
+  BookMenuBundleCollapsed = true 

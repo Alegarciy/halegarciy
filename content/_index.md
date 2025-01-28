@@ -3,6 +3,7 @@ title: "Home"
 bookFlatSection: false
 bookHidden: false
 weight: 1
+bookCollapseSection: true
 ---
 
 # 👋 Welcome to My Blog!
