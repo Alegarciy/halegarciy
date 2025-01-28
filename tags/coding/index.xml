@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Coding on Alegarciy Blog</title>
-    <link>/tags/coding/</link>
+    <link>//localhost:1313/tags/coding/</link>
     <description>Recent content in Coding on Alegarciy Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 12:52:48 -0600</lastBuildDate>
-    <atom:link href="/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 28 Jan 2025 15:36:08 -0600</lastBuildDate>
+    <atom:link href="//localhost:1313/tags/coding/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FastAPI Background</title>
-      <link>/posts/fast-api-sebastian-ramirez-interview/</link>
+      <link>//localhost:1313/posts/fast-api-sebastian-ramirez-interview/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/fast-api-sebastian-ramirez-interview/</guid>
+      <guid>//localhost:1313/posts/fast-api-sebastian-ramirez-interview/</guid>
       <description>&lt;h1 id=&#34;sebastian-ramirez---the-creator-of-fastapi&#34;&gt;&#xA;  Sebastian Ramirez - the creator of FastAPI&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#sebastian-ramirez---the-creator-of-fastapi&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;motives&#34;&gt;&#xA;  Motives&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#motives&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This week at work we were planning to create a feature for a Python API for our event ingestions from different micro-service architecture. Given the option there was an idea to develop the back-end in Flask or other frameworks but a new framework was suggested that is called FastAPI. Then for some reason, the lead of the team proposed the migration without considering before the option (that is really bad) and a new member suggested we try out the FastAPI alternative because is more maintained at the moment.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My Zettlekasten</title>
-      <link>/posts/small-projects/starting-zettlekasten-note-system/</link>
+      <link>//localhost:1313/posts/small-projects/starting-zettlekasten-note-system/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>/posts/small-projects/starting-zettlekasten-note-system/</guid>
+      <guid>//localhost:1313/posts/small-projects/starting-zettlekasten-note-system/</guid>
       <description>&lt;h1 id=&#34;zettlekastens-note-taking-system-first-approach-and-review&#34;&gt;&#xA;  Zettlekastens note taking system: First approach and review.&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#zettlekastens-note-taking-system-first-approach-and-review&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;how-the-idea-of-note-taking-was-conceived&#34;&gt;&#xA;  How the idea of note taking was conceived&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#how-the-idea-of-note-taking-was-conceived&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;At first, I started taking notes on paper since 2023 in an informal manner. I noticed that I became dependent on them, more so than I expected at first always searching for notes i didn&amp;rsquo;t record and learnings I must have forgotten because of my long-term retention capacity. Finally this year (2024), I decided to commit myself to have a formal approach on note taking.&lt;/p&gt;</description>
     </item>
   </channel>
