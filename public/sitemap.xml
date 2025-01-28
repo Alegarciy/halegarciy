@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/posts/</loc>
-    <lastmod>2025-01-28T15:36:08-06:00</lastmod>
-  </url><url>
-    <loc>/posts/small-projects/</loc>
-    <lastmod>2025-01-28T15:36:08-06:00</lastmod>
-  </url><url>
     <loc>/</loc>
     <lastmod>2025-01-28T15:48:30-06:00</lastmod>
+  </url><url>
+    <loc>/posts/</loc>
+    <lastmod>2025-01-28T15:57:09-06:00</lastmod>
+  </url><url>
+    <loc>/posts/small-projects/</loc>
+    <lastmod>2025-01-28T15:57:09-06:00</lastmod>
   </url><url>
     <loc>/docs/section/</loc>
     <lastmod>2025-01-28T15:48:30-06:00</lastmod>
