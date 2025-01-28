@@ -11,7 +11,7 @@ destinationPath="/Users/alegarciy/Documents/Github-personal/halegarciy/content"
 hugoPath="/Users/alegarciy/Documents/Github-personal/halegarciy"
 
 # Set GitHub Repo
-myrepo="git@github.com:alegarciy/halegarciy.git"
+myrepo="https://github.com/Alegarciy/halegarciy.git"
 
 # Check for required commands
 for cmd in git rsync python3 hugo; do
@@ -20,6 +20,9 @@ for cmd in git rsync python3 hugo; do
         exit 1
     fi
 done
+
+# Change to Hugo directory
+cd "$hugoPath"
 
 # Step 1: Check if Git is initialized, and initialize if necessary
 if [ ! -d ".git" ]; then
@@ -35,6 +38,7 @@ else
 fi
 
 # Step 2: Sync posts from Obsidian to Hugo content folder using rsync
+cd "$SCRIPT_DIR"
 echo "Syncing posts from Obsidian..."
 
 if [ ! -d "$sourcePath" ]; then
@@ -51,7 +55,8 @@ rsync -av --delete "$sourcePath" "$destinationPath"
 
 # New section: Create _index.md files in each directory
 echo "Creating _index.md files in directories..."
-find "$destinationPath/Posts" -type d -exec sh -c '
+cd "$destinationPath"
+find "Posts" -type d -exec sh -c '
     if [ ! -f "$1/_index.md" ]; then
         dir_name=$(basename "$1")
         cat > "$1/_index.md" << EOF
@@ -68,9 +73,10 @@ EOF
 ' sh {} \;
 
 # Step 3: Process Markdown files with Python script to handle image links
+cd "$hugoPath"
 echo "Processing image links in Markdown files..."
 if [ ! -f "$hugoPath/images.py" ]; then
-    echo "Python script images.py not found in $SCRIPT_DIR."
+    echo "Python script images.py not found in $hugoPath."
     exit 1
 fi
 
@@ -81,7 +87,7 @@ fi
 
 # Step 4: Build the Hugo site
 echo "Building the Hugo site..."
-if ! (cd "$hugoPath" && hugo); then
+if ! hugo; then
     echo "Hugo build failed."
     exit 1
 fi
