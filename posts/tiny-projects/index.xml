@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tiny-projects on Alegarciy Blog</title>
+    <link>/posts/tiny-projects/</link>
+    <description>Recent content in tiny-projects on Alegarciy Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/posts/tiny-projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Zettlekasten</title>
+      <link>/posts/tiny-projects/starting-zettlekasten-note-system/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>/posts/tiny-projects/starting-zettlekasten-note-system/</guid>
+      <description>&lt;h1 id=&#34;zettlekastens-note-taking-system-first-approach-and-review&#34;&gt;&#xA;  Zettlekastens note taking system: First approach and review.&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#zettlekastens-note-taking-system-first-approach-and-review&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;how-the-idea-of-note-taking-was-conceived&#34;&gt;&#xA;  How the idea of note taking was conceived&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#how-the-idea-of-note-taking-was-conceived&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;At first, I started taking notes on paper since 2023 in an informal manner. I noticed that I became dependent on them, more so than I expected at first always searching for notes i didn&amp;rsquo;t record and learnings I must have forgotten because of my long-term retention capacity. Finally this year (2024), I decided to commit myself to have a formal approach on note taking.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>/posts/tiny-projects/github-profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/posts/tiny-projects/github-profile/</guid>
+      <description>&lt;h1 id=&#34;github-profile&#34;&gt;&#xA;  Github Profile&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#github-profile&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;motives&#34;&gt;&#xA;  Motives&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#motives&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;I want to be able to make my Github page profile better looking, have a nice feel when people investigate my profile and projects. I want it to feel elegant and minimalistic, without too much overhead you have to go through. I watched a couple of profiles that implemented this ideas and I liked the approach enough to wanting to do it.&lt;/p&gt;&#xA;&lt;h2 id=&#34;references--observations&#34;&gt;&#xA;  References &amp;amp; Observations&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#references--observations&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Languages and Tools Section&lt;/strong&gt; because of Dropdown is cool. &lt;a href=&#34;https://github.com/gautamkrishnar/gautamkrishnar&#34;&gt;Profile Gautamkrishnar&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;project-development&#34;&gt;&#xA;  Project Development&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#project-development&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;This is a project that won&amp;rsquo;t take more than 2 weeks, so the t-shirt size I would say feels like a XS. I notice that the &lt;code&gt;README.md&lt;/code&gt; files could be scripted and filled with information on them by creating cron jobs of actions or even trigger actions inside Github. That means there is a lot of programmability you can add to your profile, that will extend the profile view from a basic markup project to a bigger project to showcase your creativity. (This was discovered specifically in the Simon Willison&amp;rsquo;s article).&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
