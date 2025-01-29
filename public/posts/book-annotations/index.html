@@ -18,7 +18,7 @@
 <link rel="canonical" href="/posts/book-annotations/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.36faa20ac5853cb71f19d967477086bf2b494205cdc913df0513f445ebad9416.js" ></script>
+  <script defer src="/en.search.min.a482ebcdd2a6c71438a09648d8c6d9047ecd99e78fc624ea1e097bda971773db.js" ></script>
 <link rel="alternate" type="application/rss+xml" href="/posts/book-annotations/index.xml" title="Alegarciy Blog" />
 <!--
 Made with Book Theme
@@ -87,29 +87,8 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-920e4cde6c1e558f23674aa13bbccec0" class="toggle"  />
-    <label for="section-920e4cde6c1e558f23674aa13bbccec0" class="flex justify-between">
-      <a href="/posts/book-annotations/sql-cookbook/" class="">sql-cookbook</a>
-    </label>
+    <a href="/posts/book-annotations/sql-cookbook-favorites/" class="">SQL Cookbook Favorites</a>
   
-
-          
-  <ul>
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="/posts/book-annotations/sql-cookbook/sql-cookbook-favorites/" class="">SQL Cookbook Favorites</a>
-  
-
-        </li>
-      
-    
-  </ul>
 
         </li>
       
@@ -285,6 +264,45 @@ https://github.com/alex-shpak/hugo-book
 
       
       
+  
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/book-annotations/sql-cookbook-favorites/">SQL Cookbook Favorites</a>
+    </h2>
+    
+
+
+  
+
+  
+
+
+    <div class="book-post-content"><h1 id="sql-cook-book-notes">
+  SQL Cook Book Notes:
+  <a class="anchor" href="#sql-cook-book-notes">#</a>
+</h1>
+<h2 id="chapter-1-retrieving-records">
+  Chapter 1: Retrieving Records
+  <a class="anchor" href="#chapter-1-retrieving-records">#</a>
+</h2>
+<p>For initializing the project run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>psql -U postgres -h localhost -p <span style="color:#ae81ff">5432</span> -d postgres -f init_setup.sql
+</span></span></code></pre></div><h3 id="16-referencing-and-aliased-column-in-the-where-clause">
+  1.6 Referencing and Aliased Column in the WHERE Clause
+  <a class="anchor" href="#16-referencing-and-aliased-column-in-the-where-clause">#</a>
+</h3>
+<p>This is a interesting example because referencing aliased columns will fail unless you wrap it around another query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">select</span> sal <span style="color:#66d9ef">as</span> salary, comm <span style="color:#66d9ef">as</span> commission
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span>  ) x
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span> salary <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>
+</span></span></code></pre></div><p>This works because the order of clauses is the next one:</p>
+        <a href="/posts/book-annotations/sql-cookbook-favorites/">...</a>
+      
+    </div>
+  </article>
   
 
   
