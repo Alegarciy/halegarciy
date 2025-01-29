@@ -1,6 +1,6 @@
 # SQL Cook Book Notes: 
 
-## Chapter 1: Retrieving Records
+## Chapter 1:  SQL Retrieving Records
 
 For initializing the project run the following command:
 
