@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/posts/videos-i-like/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/</loc>
     <lastmod>2025-01-28T15:48:30-06:00</lastmod>
   </url><url>
@@ -17,8 +20,8 @@
     <loc>/tags/coding/</loc>
     <lastmod>2025-01-28T15:36:08-06:00</lastmod>
   </url><url>
-    <loc>/posts/fast-api-sebastian-ramirez-interview/</loc>
-    <lastmod>2025-01-11T12:52:48-06:00</lastmod>
+    <loc>/posts/videos-i-like/fast-api-sebastian-ramirez-interview/</loc>
+    <lastmod>2025-01-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/posts/small-projects/starting-zettlekasten-note-system/</loc>
     <lastmod>2025-01-28T15:36:08-06:00</lastmod>
@@ -27,7 +30,7 @@
     <lastmod>2025-01-28T15:36:08-06:00</lastmod>
   </url><url>
     <loc>/posts/small-projects/github-profile/</loc>
-    <lastmod>2025-01-28T15:36:08-06:00</lastmod>
+    <lastmod>2025-01-28T16:08:56-06:00</lastmod>
   </url><url>
     <loc>/categories/</loc>
   </url><url>
