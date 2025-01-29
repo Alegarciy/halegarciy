@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  SQL Cook Book Notes:
+  #
+
+
+  Chapter 1: Retrieving Records
+  #
+
+For initializing the project run the following command:
+psql -U postgres -h localhost -p 5432 -d postgres -f init_setup.sql
+
+  1.6 Referencing and Aliased Column in the WHERE Clause
+  #
+
+This is a interesting example because referencing aliased columns will fail unless you wrap it around another query:
+select *
+  from (
+    select sal as salary, comm as commission
+    from emp
+  ) x
+  where salary &lt; 5000
+This works because the order of clauses is the next one:">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="/posts/book-annotations/sql-cookbook/sql-cookbook-favorites/">
+  <meta property="og:site_name" content="Alegarciy Blog">
+  <meta property="og:title" content="Alegarciy Blog">
+  <meta property="og:description" content="SQL Cook Book Notes: # Chapter 1: Retrieving Records # For initializing the project run the following command:
+psql -U postgres -h localhost -p 5432 -d postgres -f init_setup.sql 1.6 Referencing and Aliased Column in the WHERE Clause # This is a interesting example because referencing aliased columns will fail unless you wrap it around another query:
+select * from ( select sal as salary, comm as commission from emp ) x where salary &lt; 5000 This works because the order of clauses is the next one:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+<title>SQL Cookbook Favorites | Alegarciy Blog</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="/posts/book-annotations/sql-cookbook/sql-cookbook-favorites/">
+<link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.36faa20ac5853cb71f19d967477086bf2b494205cdc913df0513f445ebad9416.js" ></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Alegarciy Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-523527168b568d9b2bd0230b4725ac62" class="toggle" checked />
+    <label for="section-523527168b568d9b2bd0230b4725ac62" class="flex justify-between">
+      <a href="/posts/book-annotations/" class="">book-annotations</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-920e4cde6c1e558f23674aa13bbccec0" class="toggle" checked />
+    <label for="section-920e4cde6c1e558f23674aa13bbccec0" class="flex justify-between">
+      <a href="/posts/book-annotations/sql-cookbook/" class="">sql-cookbook</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/book-annotations/sql-cookbook/sql-cookbook-favorites/" class="active">SQL Cookbook Favorites</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce208b0f39718fce201c5e2232991e65" class="toggle"  />
+    <label for="section-ce208b0f39718fce201c5e2232991e65" class="flex justify-between">
+      <a href="/posts/small-projects/" class="">small-projects</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/small-projects/starting-zettlekasten-note-system/" class="">My Zettlekasten</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/small-projects/github-profile/" class="">Github Profile</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fa4ae702290574468a3fe80c1ad1aba2" class="toggle"  />
+    <label for="section-fa4ae702290574468a3fe80c1ad1aba2" class="flex justify-between">
+      <a href="/posts/videos-i-like/" class="">videos I like</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/videos-i-like/fast-api-sebastian-ramirez-interview/" class="">FastAPI Background</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>SQL Cookbook Favorites</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-1-retrieving-records">Chapter 1: Retrieving Records</a>
+      <ul>
+        <li><a href="#16-referencing-and-aliased-column-in-the-where-clause">1.6 Referencing and Aliased Column in the WHERE Clause</a></li>
+        <li><a href="#110-returning-n-random-records-from-a-table">1.10 Returning n Random Records from a Table</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-2-sorting-query-results">Chapter 2: Sorting Query Results</a>
+      <ul>
+        <li><a href="#22-sorting-multiple-fields">2.2 Sorting multiple fields</a></li>
+        <li><a href="#25-dealing-with-null-while-sorting">2.5 Dealing with NULL while sorting</a></li>
+        <li><a href="#26-sorting-on-a-data-dependent-key">2.6 Sorting on a Data-Dependent Key</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-3-working-with-multiple-tables">Chapter 3: Working with Multiple Tables</a>
+      <ul>
+        <li><a href="#31-stacking-one-row-set-atop-another">3.1 Stacking one row set atop another</a></li>
+        <li><a href="#32-combining-related-rows">3.2 Combining Related Rows</a></li>
+        <li><a href="#34-retrieving-value-from-on-table-that-do-not-exist-in-another">3.4 Retrieving value from on table that do not exist in another</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown book-post">
+  <h2>
+    SQL Cookbook Favorites
+  </h2>
+  
+
+
+  
+
+  
+
+
+  <div class="book-post-content"><h1 id="sql-cook-book-notes">
+  SQL Cook Book Notes:
+  <a class="anchor" href="#sql-cook-book-notes">#</a>
+</h1>
+<h2 id="chapter-1-retrieving-records">
+  Chapter 1: Retrieving Records
+  <a class="anchor" href="#chapter-1-retrieving-records">#</a>
+</h2>
+<p>For initializing the project run the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>psql -U postgres -h localhost -p <span style="color:#ae81ff">5432</span> -d postgres -f init_setup.sql
+</span></span></code></pre></div><h3 id="16-referencing-and-aliased-column-in-the-where-clause">
+  1.6 Referencing and Aliased Column in the WHERE Clause
+  <a class="anchor" href="#16-referencing-and-aliased-column-in-the-where-clause">#</a>
+</h3>
+<p>This is a interesting example because referencing aliased columns will fail unless you wrap it around another query:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">select</span> sal <span style="color:#66d9ef">as</span> salary, comm <span style="color:#66d9ef">as</span> commission
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span>  ) x
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span> salary <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">5000</span>
+</span></span></code></pre></div><p>This works because the order of clauses is the next one:</p>
+<ol>
+<li>FROM CLAUSE</li>
+<li>SELECT CLAUSE</li>
+<li>WHERE CLAUSE</li>
+</ol>
+<p>This well lead to new concepts:</p>
+<ol>
+<li>Aggregated Functions</li>
+<li>Scalar Subqueries</li>
+<li>Windowing functions</li>
+<li>Aliases</li>
+</ol>
+<h3 id="110-returning-n-random-records-from-a-table">
+  1.10 Returning n Random Records from a Table
+  <a class="anchor" href="#110-returning-n-random-records-from-a-table">#</a>
+</h3>
+<p>This is an interesting example for creating programs with different data executions samples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> ename, job
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> random() <span style="color:#66d9ef">limit</span> <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>The ORDER BY clause can accept a function&rsquo;s return value and use it to change the order of the result set.</p>
+<ol>
+<li>FUNCTION EXAMPLE -&gt; random()</li>
+<li>ORDER CLAUSE</li>
+<li>LIMIT CLAUSE</li>
+</ol>
+<h2 id="chapter-2-sorting-query-results">
+  Chapter 2: Sorting Query Results
+  <a class="anchor" href="#chapter-2-sorting-query-results">#</a>
+</h2>
+<h3 id="22-sorting-multiple-fields">
+  2.2 Sorting multiple fields
+  <a class="anchor" href="#22-sorting-multiple-fields">#</a>
+</h3>
+<blockquote>
+<p>The order of PRECEDENCE in ORDER BY is from left to right</p>
+</blockquote>
+<p>This means that groups are first form for the sorted [select_list_element_pos0] and then evaluate the other list items moving forward. (e.g)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> empno, deptno, sal, ename, job 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> deptno , sal <span style="color:#66d9ef">desc</span>
+</span></span></code></pre></div><p>In this case, the order would be priority 0 <code>deptno</code> and then sort those &ldquo;groups&rdquo; by <code>sal</code>.</p>
+<blockquote>
+<p>You are generally permitted to order by a column not in the SELECT list, but to do so you must explicitly name the column. However, if you are using GROUP BY or DISTINCT in your query, you cannot order by columns that are not in the SELECT list.</p>
+</blockquote>
+<h3 id="25-dealing-with-null-while-sorting">
+  2.5 Dealing with NULL while sorting
+  <a class="anchor" href="#25-dealing-with-null-while-sorting">#</a>
+</h3>
+<p>Normally if you are not using oracle the standard solution is to create an extra column:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> ename, sal, comm, is_null
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">from</span> (
+</span></span><span style="display:flex;"><span> 	<span style="color:#66d9ef">select</span> ename, sal, comm, 
+</span></span><span style="display:flex;"><span> 	<span style="color:#66d9ef">case</span> 
+</span></span><span style="display:flex;"><span>	    <span style="color:#66d9ef">when</span> comm <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span> <span style="color:#66d9ef">then</span> <span style="color:#ae81ff">0</span> 
+</span></span><span style="display:flex;"><span> 		<span style="color:#66d9ef">else</span> <span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span> 	<span style="color:#66d9ef">end</span> <span style="color:#66d9ef">as</span> is_null
+</span></span><span style="display:flex;"><span> 	<span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span> ) x
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> is_null <span style="color:#66d9ef">desc</span>, comm <span style="color:#66d9ef">desc</span>
+</span></span></code></pre></div><h3 id="26-sorting-on-a-data-dependent-key">
+  2.6 Sorting on a Data-Dependent Key
+  <a class="anchor" href="#26-sorting-on-a-data-dependent-key">#</a>
+</h3>
+<p>You can sort by a data dependent key by applying conditionals in the ORDER CLAUSE:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">select</span> ename, sal, job, comm <span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">order</span> <span style="color:#66d9ef">by</span> (
+</span></span><span style="display:flex;"><span>  	<span style="color:#66d9ef">case</span> 
+</span></span><span style="display:flex;"><span>	  	<span style="color:#66d9ef">when</span> job<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;SALESMAN&#39;</span> <span style="color:#66d9ef">then</span> comm
+</span></span><span style="display:flex;"><span>  		<span style="color:#66d9ef">else</span> sal
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span></code></pre></div><h2 id="chapter-3-working-with-multiple-tables">
+  Chapter 3: Working with Multiple Tables
+  <a class="anchor" href="#chapter-3-working-with-multiple-tables">#</a>
+</h2>
+<h3 id="31-stacking-one-row-set-atop-another">
+  3.1 Stacking one row set atop another
+  <a class="anchor" href="#31-stacking-one-row-set-atop-another">#</a>
+</h3>
+<p>This is an interesting analogy where the UNION ALL clause is compared to stacking tables by its shared datatype.</p>
+<ol>
+<li>UNION ALL: will allow repetition</li>
+<li>UNION: will filter out repeated results</li>
+</ol>
+<blockquote>
+<p>As with all set operations, the items in all the SELECT lists must match in number and data type.</p>
+</blockquote>
+<p>Look out for performance improvements on any <strong>de-duplication</strong> process:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>Before using DISTINCT you need to ask yourself why do you need distinct to deduplicate a dataset... and the answer is almost always because of a bad join, missing constraints and/or dirty data.
+</span></span></code></pre></div><h3 id="32-combining-related-rows">
+  3.2 Combining Related Rows
+  <a class="anchor" href="#32-combining-related-rows">#</a>
+</h3>
+<p>Is the basics of the inner join, but also i want to highlight how are different representations of it and the Cartesian product:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> dept d , emp e 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- cartesian product: 56
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> emp e 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">inner</span> <span style="color:#66d9ef">join</span> dept d <span style="color:#66d9ef">on</span> e.deptno <span style="color:#f92672">=</span> d.deptno
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- cartesian product: 14 when the department matched
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#66d9ef">from</span> dept d, emp e 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">where</span> d.deptno <span style="color:#f92672">=</span> e.deptno 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- cartesian product: 14 this is the &#39;equi-join&#39;
+</span></span></span></code></pre></div><h3 id="34-retrieving-value-from-on-table-that-do-not-exist-in-another">
+  3.4 Retrieving value from on table that do not exist in another
+  <a class="anchor" href="#34-retrieving-value-from-on-table-that-do-not-exist-in-another">#</a>
+</h3>
+<p>In Postgresql you have the <code>except</code> operator:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> deptno <span style="color:#66d9ef">from</span> dept
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> deptno <span style="color:#66d9ef">from</span> emp
+</span></span></code></pre></div><p>Links:</p>
+<ul>
+<li>
+<p>Documentations:
+<a href="https://www.postgresql.org/docs/9.1/functions-string.html">Postgres: String Function</a></p>
+</li>
+<li>
+<p>Articles:
+<a href="https://www.reddit.com/r/dataengineering/comments/17qge22/is_select_distinct_really_that_bad/">Reddit: Is SELECT DISTINCT really that bad?</a></p>
+</li>
+<li>
+<p>Videos:
+<a href="https://www.youtube.com/watch?v=ufjEv-5nmcA&amp;ab_channel=Dr.TreforBazett">Cartesian Product</a></p>
+</li>
+</ul>
+<p>202411070009</p>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer>
+  <p>Made with using Hugo | © 2025 Alegarciy</p>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-1-retrieving-records">Chapter 1: Retrieving Records</a>
+      <ul>
+        <li><a href="#16-referencing-and-aliased-column-in-the-where-clause">1.6 Referencing and Aliased Column in the WHERE Clause</a></li>
+        <li><a href="#110-returning-n-random-records-from-a-table">1.10 Returning n Random Records from a Table</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-2-sorting-query-results">Chapter 2: Sorting Query Results</a>
+      <ul>
+        <li><a href="#22-sorting-multiple-fields">2.2 Sorting multiple fields</a></li>
+        <li><a href="#25-dealing-with-null-while-sorting">2.5 Dealing with NULL while sorting</a></li>
+        <li><a href="#26-sorting-on-a-data-dependent-key">2.6 Sorting on a Data-Dependent Key</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-3-working-with-multiple-tables">Chapter 3: Working with Multiple Tables</a>
+      <ul>
+        <li><a href="#31-stacking-one-row-set-atop-another">3.1 Stacking one row set atop another</a></li>
+        <li><a href="#32-combining-related-rows">3.2 Combining Related Rows</a></li>
+        <li><a href="#34-retrieving-value-from-on-table-that-do-not-exist-in-another">3.4 Retrieving value from on table that do not exist in another</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
