@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  📌 Guide: Writing Responsible Transactions in PostgreSQL
+  #
+
+A transaction is a sequence of SQL statements executed as a single unit of work. It ensures that all statements within it either succeed completely or fail together, maintaining ACID properties (Atomicity, Consistency, Isolation, Durability).
+
+
+  🏁 1. Starting a Transaction Properly
+  #
+
+
+  ✅ Basic Transaction Syntax
+  #
+
+BEGIN;  -- Start a transaction
+
+-- Your SQL statements here
+COMMIT; -- Save changes permanently
+OR">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="/posts/sql-notes/transactions/">
+  <meta property="og:site_name" content="Alegarciy Blog">
+  <meta property="og:title" content="Alegarciy Blog">
+  <meta property="og:description" content="📌 Guide: Writing Responsible Transactions in PostgreSQL # A transaction is a sequence of SQL statements executed as a single unit of work. It ensures that all statements within it either succeed completely or fail together, maintaining ACID properties (Atomicity, Consistency, Isolation, Durability).
+🏁 1. Starting a Transaction Properly # ✅ Basic Transaction Syntax # BEGIN; -- Start a transaction -- Your SQL statements here COMMIT; -- Save changes permanently OR">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+<title>Transactions | Alegarciy Blog</title>
+<link rel="icon" href="/favicon.png" >
+<link rel="manifest" href="/manifest.json">
+<link rel="canonical" href="/posts/sql-notes/transactions/">
+<link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
+  <script defer src="/fuse.min.js"></script>
+  <script defer src="/en.search.min.c4a51ac9dbb39eebccaab3396c05ad4034793cf029e9e61683d595966f65777c.js" ></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>Alegarciy Blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-523527168b568d9b2bd0230b4725ac62" class="toggle"  />
+    <label for="section-523527168b568d9b2bd0230b4725ac62" class="flex justify-between">
+      <a href="/posts/book-annotations/" class="">book-annotations</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/book-annotations/sql-cookbook-favorites/" class="">SQL Cookbook Favorites</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4bf36dd6ed0d696789892a2720a98fc9" class="toggle" checked />
+    <label for="section-4bf36dd6ed0d696789892a2720a98fc9" class="flex justify-between">
+      <a href="/posts/sql-notes/" class="">sql-notes</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/sql-notes/transactions/" class="active">Transactions</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9093c264dedc11fbf7942febc9958906" class="toggle"  />
+    <label for="section-9093c264dedc11fbf7942febc9958906" class="flex justify-between">
+      <a href="/posts/tiny-projects/" class="">tiny-projects</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/tiny-projects/starting-zettlekasten-note-system/" class="">My Zettlekasten</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/tiny-projects/github-profile/" class="">Github Profile</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fa4ae702290574468a3fe80c1ad1aba2" class="toggle"  />
+    <label for="section-fa4ae702290574468a3fe80c1ad1aba2" class="flex justify-between">
+      <a href="/posts/videos-i-like/" class="">videos I like</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/posts/videos-i-like/fast-api-sebastian-ramirez-interview/" class="">FastAPI Background</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <h3>Transactions</h3>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-1-starting-a-transaction-properly">🏁 1. Starting a Transaction Properly</a>
+      <ul>
+        <li><a href="#-basic-transaction-syntax">✅ Basic Transaction Syntax</a></li>
+      </ul>
+    </li>
+    <li><a href="#-2-example-safe-insert-and-update">🚦 2. Example: Safe Insert and Update</a>
+      <ul>
+        <li><a href="#-scenario-banking-system---transferring-money">🛠 Scenario: Banking System - Transferring Money</a></li>
+        <li><a href="#-correct-approach-using-transactions">✅ Correct Approach Using Transactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#-3-handling-errors-with-rollback">🚨 3. Handling Errors with ROLLBACK</a>
+      <ul>
+        <li><a href="#-bad-example-no-rollback">❌ Bad Example (No Rollback)</a></li>
+        <li><a href="#-correct-way-using-rollback">✅ Correct Way (Using ROLLBACK)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-4-using-savepoints-for-partial-rollbacks">🔄 4. Using Savepoints for Partial Rollbacks</a>
+      <ul>
+        <li><a href="#-example-multiple-updates-with-savepoints">✅ Example: Multiple Updates with Savepoints</a></li>
+      </ul>
+    </li>
+    <li><a href="#-5-avoiding-deadlocks-and-performance-issues">⏳ 5. Avoiding Deadlocks and Performance Issues</a>
+      <ul>
+        <li><a href="#-best-practices">✅ Best Practices</a></li>
+      </ul>
+    </li>
+    <li><a href="#-6-using-isolation-levels">🎯 6. Using Isolation Levels</a>
+      <ul>
+        <li><a href="#-isolation-levels">💮 Isolation Levels</a></li>
+        <li><a href="#-example-setting-an-isolation-level">✅ Example: Setting an Isolation Level</a></li>
+      </ul>
+    </li>
+    <li><a href="#-7-best-practices-for-responsible-transactions">🏆 7. Best Practices for Responsible Transactions</a></li>
+    <li><a href="#-final-example-a-well-structured-transaction">🌟 Final Example: A Well-Structured Transaction</a></li>
+    <li><a href="#-conclusion">✅ Conclusion</a></li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown book-post">
+  <h2>
+    Transactions
+  </h2>
+  
+
+
+  
+
+  
+
+
+  <div class="book-post-content"><h1 id="-guide-writing-responsible-transactions-in-postgresql">
+  📌 Guide: Writing Responsible Transactions in PostgreSQL
+  <a class="anchor" href="#-guide-writing-responsible-transactions-in-postgresql">#</a>
+</h1>
+<p>A transaction is a sequence of SQL statements executed as a single unit of work. It ensures that all statements within it either succeed completely or fail together, maintaining <strong>ACID</strong> properties (<strong>Atomicity, Consistency, Isolation, Durability</strong>).</p>
+<hr>
+<h2 id="-1-starting-a-transaction-properly">
+  🏁 1. Starting a Transaction Properly
+  <a class="anchor" href="#-1-starting-a-transaction-properly">#</a>
+</h2>
+<h3 id="-basic-transaction-syntax">
+  ✅ Basic Transaction Syntax
+  <a class="anchor" href="#-basic-transaction-syntax">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;  <span style="color:#75715e">-- Start a transaction
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Your SQL statements here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">COMMIT</span>; <span style="color:#75715e">-- Save changes permanently
+</span></span></span></code></pre></div><p><strong>OR</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;  <span style="color:#75715e">-- Start a transaction
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Your SQL statements here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ROLLBACK</span>; <span style="color:#75715e">-- Undo changes if something goes wrong
+</span></span></span></code></pre></div><hr>
+<h2 id="-2-example-safe-insert-and-update">
+  🚦 2. Example: Safe Insert and Update
+  <a class="anchor" href="#-2-example-safe-insert-and-update">#</a>
+</h2>
+<h3 id="-scenario-banking-system---transferring-money">
+  🛠 Scenario: Banking System - Transferring Money
+  <a class="anchor" href="#-scenario-banking-system---transferring-money">#</a>
+</h3>
+<p>Imagine a <strong>money transfer</strong> between two accounts:</p>
+<ul>
+<li>Deduct <strong>$100</strong> from <strong>Account A</strong>.</li>
+<li>Add <strong>$100</strong> to <strong>Account B</strong>.</li>
+<li>If either fails, <strong>rollback everything</strong>.</li>
+</ul>
+<h3 id="-correct-approach-using-transactions">
+  ✅ Correct Approach Using Transactions
+  <a class="anchor" href="#-correct-approach-using-transactions">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;  <span style="color:#75715e">-- Start transaction
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Deduct from sender
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">UPDATE</span> accounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">-</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Add to receiver
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">UPDATE</span> accounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">+</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- If everything is successful, commit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">COMMIT</span>;
+</span></span></code></pre></div><ul>
+<li>If <strong>both statements succeed</strong>, the transaction is <strong>committed</strong>.</li>
+<li>If <strong>any step fails</strong>, use <code>ROLLBACK;</code> instead of <code>COMMIT;</code>.</li>
+</ul>
+<hr>
+<h2 id="-3-handling-errors-with-rollback">
+  🚨 3. Handling Errors with ROLLBACK
+  <a class="anchor" href="#-3-handling-errors-with-rollback">#</a>
+</h2>
+<p>If something goes wrong in the transaction (e.g., <strong>insufficient funds</strong>), we can <strong>undo all changes</strong>.</p>
+<h3 id="-bad-example-no-rollback">
+  ❌ Bad Example (No Rollback)
+  <a class="anchor" href="#-bad-example-no-rollback">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> accounts <span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">-</span> <span style="color:#ae81ff">100</span> <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Oops! Next line fails due to constraint violation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">UPDATE</span> accounts <span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">+</span> <span style="color:#ae81ff">100</span> <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">999</span>;  <span style="color:#75715e">-- Invalid ID
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COMMIT</span>; <span style="color:#75715e">-- 💥 ERROR: The first update is already applied!
+</span></span></span></code></pre></div><ul>
+<li>The first update <strong>succeeded</strong>, but the second <strong>failed</strong>.</li>
+<li><strong>Account A lost $100, but Account B never received it!</strong> ❌</li>
+</ul>
+<h3 id="-correct-way-using-rollback">
+  ✅ Correct Way (Using ROLLBACK)
+  <a class="anchor" href="#-correct-way-using-rollback">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> accounts <span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">-</span> <span style="color:#ae81ff">100</span> <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Simulate an error (e.g., invalid account ID)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">UPDATE</span> accounts <span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">+</span> <span style="color:#ae81ff">100</span> <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">999</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- If something goes wrong, rollback everything
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ROLLBACK</span>;
+</span></span></code></pre></div><p>Now <strong>nothing is applied</strong> if an error occurs.</p>
+<hr>
+<h2 id="-4-using-savepoints-for-partial-rollbacks">
+  🔄 4. Using Savepoints for Partial Rollbacks
+  <a class="anchor" href="#-4-using-savepoints-for-partial-rollbacks">#</a>
+</h2>
+<p>Sometimes, you want to <strong>partially undo</strong> changes instead of rolling back the entire transaction. <strong>Savepoints</strong> help with that.</p>
+<h3 id="-example-multiple-updates-with-savepoints">
+  ✅ Example: Multiple Updates with Savepoints
+  <a class="anchor" href="#-example-multiple-updates-with-savepoints">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SAVEPOINT sp1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> accounts <span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">-</span> <span style="color:#ae81ff">100</span> <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>SAVEPOINT sp2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> accounts <span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">+</span> <span style="color:#ae81ff">100</span> <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Oops! Something goes wrong
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">ROLLBACK</span> <span style="color:#66d9ef">TO</span> SAVEPOINT sp2;  <span style="color:#75715e">-- Undo only the last change
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Continue transaction
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">COMMIT</span>;
+</span></span></code></pre></div><ul>
+<li><strong>Savepoints</strong> allow rolling back <strong>only part of the transaction</strong> instead of everything.</li>
+<li>Useful when dealing with <strong>batch processing</strong>.</li>
+</ul>
+<hr>
+<h2 id="-5-avoiding-deadlocks-and-performance-issues">
+  ⏳ 5. Avoiding Deadlocks and Performance Issues
+  <a class="anchor" href="#-5-avoiding-deadlocks-and-performance-issues">#</a>
+</h2>
+<p>Deadlocks occur when <strong>two transactions wait for each other</strong> to release locks. To avoid them:</p>
+<h3 id="-best-practices">
+  ✅ Best Practices
+  <a class="anchor" href="#-best-practices">#</a>
+</h3>
+<ol>
+<li><strong>Access tables in the same order</strong> in all transactions.</li>
+<li><strong>Keep transactions short</strong> to avoid holding locks too long.</li>
+<li><strong>Use <code>FOR UPDATE</code> to lock rows explicitly</strong>:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> accounts <span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">FOR</span> <span style="color:#66d9ef">UPDATE</span>;
+</span></span></code></pre></div><p>This prevents another transaction from modifying the same row simultaneously.</p>
+<hr>
+<h2 id="-6-using-isolation-levels">
+  🎯 6. Using Isolation Levels
+  <a class="anchor" href="#-6-using-isolation-levels">#</a>
+</h2>
+<p>PostgreSQL provides <strong>four transaction isolation levels</strong> to control how transactions interact.</p>
+<h3 id="-isolation-levels">
+  💮 Isolation Levels
+  <a class="anchor" href="#-isolation-levels">#</a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Level</th>
+          <th>Dirty Reads</th>
+          <th>Non-Repeatable Reads</th>
+          <th>Phantom Reads</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>READ UNCOMMITTED</strong></td>
+          <td>✅ Allowed</td>
+          <td>✅ Allowed</td>
+          <td>✅ Allowed</td>
+      </tr>
+      <tr>
+          <td><strong>READ COMMITTED (default)</strong></td>
+          <td>❌ Not Allowed</td>
+          <td>✅ Allowed</td>
+          <td>✅ Allowed</td>
+      </tr>
+      <tr>
+          <td><strong>REPEATABLE READ</strong></td>
+          <td>❌ Not Allowed</td>
+          <td>❌ Not Allowed</td>
+          <td>✅ Allowed</td>
+      </tr>
+      <tr>
+          <td><strong>SERIALIZABLE</strong></td>
+          <td>❌ Not Allowed</td>
+          <td>❌ Not Allowed</td>
+          <td>❌ Not Allowed</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="-example-setting-an-isolation-level">
+  ✅ Example: Setting an Isolation Level
+  <a class="anchor" href="#-example-setting-an-isolation-level">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">TRANSACTION</span> <span style="color:#66d9ef">ISOLATION</span> <span style="color:#66d9ef">LEVEL</span> <span style="color:#66d9ef">REPEATABLE</span> <span style="color:#66d9ef">READ</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Your SQL statements here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COMMIT</span>;
+</span></span></code></pre></div><ul>
+<li><strong>Use <code>REPEATABLE READ</code></strong> for consistency in reports.</li>
+<li><strong>Use <code>SERIALIZABLE</code></strong> to avoid concurrency issues but expect performance trade-offs.</li>
+</ul>
+<hr>
+<h2 id="-7-best-practices-for-responsible-transactions">
+  🏆 7. Best Practices for Responsible Transactions
+  <a class="anchor" href="#-7-best-practices-for-responsible-transactions">#</a>
+</h2>
+<p>✅ <strong>Keep transactions short</strong>: Avoid holding locks longer than necessary.<br>
+✅ <strong>Always use <code>ROLLBACK</code> for error handling</strong>: Prevent incomplete changes.<br>
+✅ <strong>Use <code>SAVEPOINT</code> for partial rollbacks</strong>: Avoid restarting entire transactions.<br>
+✅ <strong>Lock rows explicitly</strong> if updating the same records in multiple transactions.<br>
+✅ <strong>Test transactions with a <code>ROLLBACK</code> first</strong> before applying <code>COMMIT</code>.</p>
+<hr>
+<h2 id="-final-example-a-well-structured-transaction">
+  🌟 Final Example: A Well-Structured Transaction
+  <a class="anchor" href="#-final-example-a-well-structured-transaction">#</a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Step 1: Deduct funds
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">UPDATE</span> accounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">-</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Step 2: Savepoint before updating receiver
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>SAVEPOINT before_receiver_update;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Step 3: Add funds to the receiver
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">UPDATE</span> accounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> balance <span style="color:#f92672">=</span> balance <span style="color:#f92672">+</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> id <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Step 4: Check if everything is good, commit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">COMMIT</span>;
+</span></span></code></pre></div><p>If anything fails before <code>COMMIT</code>, simply:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ROLLBACK</span>;
+</span></span></code></pre></div><p>Or, if only the last step fails:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ROLLBACK</span> <span style="color:#66d9ef">TO</span> SAVEPOINT before_receiver_update;
+</span></span></code></pre></div><hr>
+<h2 id="-conclusion">
+  ✅ Conclusion
+  <a class="anchor" href="#-conclusion">#</a>
+</h2>
+<p>With this guide, you now know how to <strong>write safe, responsible transactions</strong> in PostgreSQL to:</p>
+<ul>
+<li>Prevent <strong>data corruption</strong>.</li>
+<li>Handle <strong>errors properly</strong>.</li>
+<li>Avoid <strong>deadlocks and performance issues</strong>.</li>
+<li>Use <strong>savepoints for granular control</strong>.</li>
+</ul>
+<p>Let me know if you want a more specific case covered! 🚀</p>
+<h2 id="links">
+  Links
+  <a class="anchor" href="#links">#</a>
+</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=GOQVlrQohtM&amp;ab_channel=BroCode">AUTOCOMMIT;COMMIT;ROLLBACK</a></li>
+</ul>
+</div>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <footer>
+  <p>Made with using Hugo | © 2025 Alegarciy</p>
+</footer>
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#-1-starting-a-transaction-properly">🏁 1. Starting a Transaction Properly</a>
+      <ul>
+        <li><a href="#-basic-transaction-syntax">✅ Basic Transaction Syntax</a></li>
+      </ul>
+    </li>
+    <li><a href="#-2-example-safe-insert-and-update">🚦 2. Example: Safe Insert and Update</a>
+      <ul>
+        <li><a href="#-scenario-banking-system---transferring-money">🛠 Scenario: Banking System - Transferring Money</a></li>
+        <li><a href="#-correct-approach-using-transactions">✅ Correct Approach Using Transactions</a></li>
+      </ul>
+    </li>
+    <li><a href="#-3-handling-errors-with-rollback">🚨 3. Handling Errors with ROLLBACK</a>
+      <ul>
+        <li><a href="#-bad-example-no-rollback">❌ Bad Example (No Rollback)</a></li>
+        <li><a href="#-correct-way-using-rollback">✅ Correct Way (Using ROLLBACK)</a></li>
+      </ul>
+    </li>
+    <li><a href="#-4-using-savepoints-for-partial-rollbacks">🔄 4. Using Savepoints for Partial Rollbacks</a>
+      <ul>
+        <li><a href="#-example-multiple-updates-with-savepoints">✅ Example: Multiple Updates with Savepoints</a></li>
+      </ul>
+    </li>
+    <li><a href="#-5-avoiding-deadlocks-and-performance-issues">⏳ 5. Avoiding Deadlocks and Performance Issues</a>
+      <ul>
+        <li><a href="#-best-practices">✅ Best Practices</a></li>
+      </ul>
+    </li>
+    <li><a href="#-6-using-isolation-levels">🎯 6. Using Isolation Levels</a>
+      <ul>
+        <li><a href="#-isolation-levels">💮 Isolation Levels</a></li>
+        <li><a href="#-example-setting-an-isolation-level">✅ Example: Setting an Isolation Level</a></li>
+      </ul>
+    </li>
+    <li><a href="#-7-best-practices-for-responsible-transactions">🏆 7. Best Practices for Responsible Transactions</a></li>
+    <li><a href="#-final-example-a-well-structured-transaction">🌟 Final Example: A Well-Structured Transaction</a></li>
+    <li><a href="#-conclusion">✅ Conclusion</a></li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
