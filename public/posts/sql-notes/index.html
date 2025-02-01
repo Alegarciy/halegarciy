@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Posts section">
+<meta name="description" content="sql-notes section">
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
-<meta name="color-scheme" content="light dark"><meta property="og:url" content="/posts/">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="/posts/sql-notes/">
   <meta property="og:site_name" content="Alegarciy Blog">
-  <meta property="og:title" content="Posts">
-  <meta property="og:description" content="Posts section">
+  <meta property="og:title" content="sql-notes">
+  <meta property="og:description" content="sql-notes section">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="website">
-<title>Posts | Alegarciy Blog</title>
+<title>sql-notes | Alegarciy Blog</title>
 <link rel="icon" href="/favicon.png" >
 <link rel="manifest" href="/manifest.json">
-<link rel="canonical" href="/posts/">
+<link rel="canonical" href="/posts/sql-notes/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
   <script defer src="/fuse.min.js"></script>
   <script defer src="/en.search.min.c4a51ac9dbb39eebccaab3396c05ad4034793cf029e9e61683d595966f65777c.js" ></script>
-<link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="Alegarciy Blog" />
+<link rel="alternate" type="application/rss+xml" href="/posts/sql-notes/index.xml" title="Alegarciy Blog" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -105,9 +105,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-4bf36dd6ed0d696789892a2720a98fc9" class="toggle"  />
+    <input type="checkbox" id="section-4bf36dd6ed0d696789892a2720a98fc9" class="toggle" checked />
     <label for="section-4bf36dd6ed0d696789892a2720a98fc9" class="flex justify-between">
-      <a href="/posts/sql-notes/" class="">sql-notes</a>
+      <a href="/posts/sql-notes/" class="active">sql-notes</a>
     </label>
   
 
@@ -248,7 +248,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <h3>Posts</h3>
+  <h3>sql-notes</h3>
 
   <label for="toc-control">
     
@@ -299,6 +299,42 @@ https://github.com/alex-shpak/hugo-book
       
       
   
+  <article class="markdown book-post">
+    <h2>
+      <a href="/posts/sql-notes/transactions/">Transactions</a>
+    </h2>
+    
+
+
+  
+
+  
+
+
+    <div class="book-post-content"><h1 id="-guide-writing-responsible-transactions-in-postgresql">
+  📌 Guide: Writing Responsible Transactions in PostgreSQL
+  <a class="anchor" href="#-guide-writing-responsible-transactions-in-postgresql">#</a>
+</h1>
+<p>A transaction is a sequence of SQL statements executed as a single unit of work. It ensures that all statements within it either succeed completely or fail together, maintaining <strong>ACID</strong> properties (<strong>Atomicity, Consistency, Isolation, Durability</strong>).</p>
+<hr>
+<h2 id="-1-starting-a-transaction-properly">
+  🏁 1. Starting a Transaction Properly
+  <a class="anchor" href="#-1-starting-a-transaction-properly">#</a>
+</h2>
+<h3 id="-basic-transaction-syntax">
+  ✅ Basic Transaction Syntax
+  <a class="anchor" href="#-basic-transaction-syntax">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">BEGIN</span>;  <span style="color:#75715e">-- Start a transaction
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- Your SQL statements here
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">COMMIT</span>; <span style="color:#75715e">-- Save changes permanently
+</span></span></span></code></pre></div><p><strong>OR</strong></p>
+        <a href="/posts/sql-notes/transactions/">...</a>
+      
+    </div>
+  </article>
+  
 
   
  
@@ -308,12 +344,6 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex flex-wrap justify-between">
 
-
-  <div><a class="flex align-center" href="https://github.com/Alegarciy/halegarciy/commit/57bcbad1984617a032d754ae87b96b2d1516e3d8" title='Last modified by Alegarciy | January 28, 2025' target="_blank" rel="noopener">
-      <img src="/svg/calendar.svg" class="book-icon" alt="" />
-      <span>January 28, 2025</span>
-    </a>
-  </div>
 
 
 

@@ -11,6 +11,8 @@
     <loc>/posts/</loc>
     <lastmod>2025-01-28T15:57:09-06:00</lastmod>
   </url><url>
+    <loc>/posts/sql-notes/</loc>
+  </url><url>
     <loc>/posts/tiny-projects/</loc>
     <lastmod>2025-01-28T23:28:46-06:00</lastmod>
   </url><url>
@@ -33,7 +35,9 @@
     <lastmod>2025-01-28T23:28:46-06:00</lastmod>
   </url><url>
     <loc>/posts/book-annotations/sql-cookbook-favorites/</loc>
-    <lastmod>2025-01-28T23:20:10-06:00</lastmod>
+    <lastmod>2025-01-29T17:14:33-06:00</lastmod>
+  </url><url>
+    <loc>/posts/sql-notes/transactions/</loc>
   </url><url>
     <loc>/posts/tiny-projects/github-profile/</loc>
     <lastmod>2025-01-28T23:28:46-06:00</lastmod>

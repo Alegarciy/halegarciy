@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>sql-notes on Alegarciy Blog</title>
+    <link>/posts/sql-notes/</link>
+    <description>Recent content in sql-notes on Alegarciy Blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <atom:link href="/posts/sql-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>/posts/sql-notes/transactions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>/posts/sql-notes/transactions/</guid>
+      <description>&lt;h1 id=&#34;-guide-writing-responsible-transactions-in-postgresql&#34;&gt;&#xA;  📌 Guide: Writing Responsible Transactions in PostgreSQL&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-guide-writing-responsible-transactions-in-postgresql&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;A transaction is a sequence of SQL statements executed as a single unit of work. It ensures that all statements within it either succeed completely or fail together, maintaining &lt;strong&gt;ACID&lt;/strong&gt; properties (&lt;strong&gt;Atomicity, Consistency, Isolation, Durability&lt;/strong&gt;).&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;-1-starting-a-transaction-properly&#34;&gt;&#xA;  🏁 1. Starting a Transaction Properly&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-1-starting-a-transaction-properly&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;-basic-transaction-syntax&#34;&gt;&#xA;  ✅ Basic Transaction Syntax&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#-basic-transaction-syntax&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;BEGIN&lt;/span&gt;;  &lt;span style=&#34;color:#75715e&#34;&gt;-- Start a transaction&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;-- Your SQL statements here&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;COMMIT&lt;/span&gt;; &lt;span style=&#34;color:#75715e&#34;&gt;-- Save changes permanently&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;OR&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
