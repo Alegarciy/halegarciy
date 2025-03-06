@@ -8,7 +8,7 @@
   #
 
 
-  Chapter 1:  Retrieving Records
+  Chapter 1: Retrieving Records
   #
 
 For initializing the project run the following command:
@@ -43,7 +43,7 @@ select * from ( select sal as salary, comm as commission from emp ) x where sala
 <link rel="canonical" href="/posts/book-annotations/sql-cookbook-favorites/">
 <link rel="stylesheet" href="/book.min.6c8b9d2a1fc95075ed7da46ca81060b39add8fff6741ac51259f768929281e2c.css" >
   <script defer src="/fuse.min.js"></script>
-  <script defer src="/en.search.min.c4a51ac9dbb39eebccaab3396c05ad4034793cf029e9e61683d595966f65777c.js" ></script>
+  <script defer src="/en.search.min.aa3a68794209ffd4bbca65174ffde99814d7957290cdff04f0585c06b10f60d2.js" ></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -288,7 +288,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#chapter-1--retrieving-records">Chapter 1:  Retrieving Records</a>
+    <li><a href="#chapter-1-retrieving-records">Chapter 1: Retrieving Records</a>
       <ul>
         <li><a href="#16-referencing-and-aliased-column-in-the-where-clause">1.6 Referencing and Aliased Column in the WHERE Clause</a></li>
         <li><a href="#110-returning-n-random-records-from-a-table">1.10 Returning n Random Records from a Table</a></li>
@@ -306,6 +306,30 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#31-stacking-one-row-set-atop-another">3.1 Stacking one row set atop another</a></li>
         <li><a href="#32-combining-related-rows">3.2 Combining Related Rows</a></li>
         <li><a href="#34-retrieving-value-from-on-table-that-do-not-exist-in-another">3.4 Retrieving value from on table that do not exist in another</a></li>
+        <li><a href="#38-identifying-and-avoiding-cartesian-products">3.8 Identifying and Avoiding Cartesian Products</a></li>
+        <li><a href="#39-performing-join-when-using-aggregates">3.9 Performing Join When Using Aggregates</a></li>
+        <li><a href="#310-performing-outer-joins-when-using-aggregates">3.10: Performing Outer Joins When Using Aggregates</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-4-inserting-updating-and-deleting">Chapter 4: Inserting, Updating, and Deleting</a>
+      <ul>
+        <li><a href="#41-inserting-records-tips">4.1 Inserting records (tips)</a></li>
+        <li><a href="#42-inserting-default-values">4.2 Inserting Default Values</a></li>
+        <li><a href="#43-overriding-a-default-value-with-null">4.3 Overriding a default value with NULL</a></li>
+        <li><a href="#44-copying-the-rows-from-one-table-into-another-very-useful">4.4 Copying the rows from one table into another (Very Useful)</a></li>
+        <li><a href="#45-copying-a-table-definition-very-useful">4.5 Copying a Table Definition (Very Useful)</a></li>
+        <li><a href="#48-modifying-records-in-a-table">4.8 Modifying Records in a Table</a></li>
+        <li><a href="#49-updating-when-corresponding-rows-exists">4.9 Updating when corresponding rows exists</a></li>
+        <li><a href="#410-updating-with-values-from-another-table">4.10 Updating with Values from Another Table</a></li>
+        <li><a href="#415-deleting-referential-integrity-violations">4.15 Deleting Referential Integrity Violations</a></li>
+        <li><a href="#417-deleting-records-referenced-from-another-table">4.17 Deleting Records Referenced from Another Table</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-5-metadata-queries">Chapter 5: Metadata Queries</a>
+      <ul>
+        <li><a href="#51-listing-tables-in-a-schema">5.1 Listing Tables in a Schema</a></li>
+        <li><a href="#52-listing-tables-columns">5.2 Listing Table&rsquo;s Columns</a></li>
+        <li><a href="#53-listing-indexed-columns-for-a-table">5.3 Listing Indexed Columns for a Table</a></li>
       </ul>
     </li>
   </ul>
@@ -336,9 +360,9 @@ https://github.com/alex-shpak/hugo-book
   SQL Cook Book Notes:
   <a class="anchor" href="#sql-cook-book-notes">#</a>
 </h1>
-<h2 id="chapter-1--retrieving-records">
-  Chapter 1:  Retrieving Records
-  <a class="anchor" href="#chapter-1--retrieving-records">#</a>
+<h2 id="chapter-1-retrieving-records">
+  Chapter 1: Retrieving Records
+  <a class="anchor" href="#chapter-1-retrieving-records">#</a>
 </h2>
 <p>For initializing the project run the following command:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>psql -U postgres -h localhost -p <span style="color:#ae81ff">5432</span> -d postgres -f init_setup.sql
@@ -467,7 +491,228 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> deptno <span style="color:#66d9ef">from</span> dept
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> deptno <span style="color:#66d9ef">from</span> emp
-</span></span></code></pre></div><p>Links:</p>
+</span></span></code></pre></div><h3 id="38-identifying-and-avoiding-cartesian-products">
+  3.8 Identifying and Avoiding Cartesian Products
+  <a class="anchor" href="#38-identifying-and-avoiding-cartesian-products">#</a>
+</h3>
+<p>For this section, most of the SQL i will work with, will already be created so this process of analyzing and depicting the Cartesian products should be apply whenever I see a table.</p>
+<p>A couple of rules for cardinality:</p>
+<pre tabindex="0"><code>Generally, to avoid a Cartesian product, you would apply the n-1 rule where n represents the number of tables in the FROM clause and n-1 represents the minimun number of joins necessary to avoid a Cartesian product. Depending on what the keys and join columns in your tables are, you may very well need more than n-1 joins but n-1 is a good place to start when writing queries.
+</code></pre><p><strong>Cartesian Product Usefulness:</strong></p>
+<blockquote>
+<p>When used  properly, Cartesian products can be useful. Common uses of Cartesian products include transposing or pivoting (and unpivoting) a result set, generating a sequence of values, and mimicking a loop (although the last may also be accomplished using a recursive CTE).</p>
+</blockquote>
+<h3 id="39-performing-join-when-using-aggregates">
+  3.9 Performing Join When Using Aggregates
+  <a class="anchor" href="#39-performing-join-when-using-aggregates">#</a>
+</h3>
+<p><strong>I believe this is one of the trickiest parts of building good data and is avoiding at ALL COST repetition while creating joins and aggregates with repeated data.</strong></p>
+<p>An example case of this is whenever you in a Cartesian  product have a repeated row say two times the row in which ONE employee has salary. Then if you do an aggregate of the salary it will counts two times that person salary.</p>
+<p>In this kind of cases the solution that is viable is to create a grouping before it like a view or a nested table on the query that will make the salaries unique for the inner join (an aggregation before the real aggregation).</p>
+<p>Example 01: In this example we are making sure the bonus row is aggregated before the aggregation of the salary otherwise we  will aggregate the bonus correctly but the salary would be doubled.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> 
+</span></span><span style="display:flex;"><span>	x.deptno,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">sum</span>(x.sal),
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">sum</span>(x.bonus)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> (	
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">select</span> 
+</span></span><span style="display:flex;"><span>		e.empno,
+</span></span><span style="display:flex;"><span>		e.sal,
+</span></span><span style="display:flex;"><span>		e.deptno,
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">sum</span>(e.sal <span style="color:#f92672">*</span> <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">when</span> eb.<span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">then</span> .<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>					 <span style="color:#66d9ef">when</span> eb.<span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">then</span> .<span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>					 <span style="color:#66d9ef">else</span> .<span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>		) <span style="color:#66d9ef">as</span> bonus
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">from</span> 
+</span></span><span style="display:flex;"><span>		emp e,
+</span></span><span style="display:flex;"><span>		emp_bonus eb 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>		e.empno <span style="color:#f92672">=</span> eb.empno 
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">and</span> e.deptno <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> e.empno , e.sal, e.deptno 
+</span></span><span style="display:flex;"><span>		
+</span></span><span style="display:flex;"><span>) x <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> deptno
+</span></span></code></pre></div><p>As an alternative you can create the new table because in the previous example we are creating the column and the grouping by removing duplicates:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> 
+</span></span><span style="display:flex;"><span>	d.deptno,
+</span></span><span style="display:flex;"><span>	d.total_sal,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">sum</span>(e.sal <span style="color:#f92672">*</span> <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">when</span> eb.<span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">then</span> .<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>					 <span style="color:#66d9ef">when</span> eb.<span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">then</span> .<span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>					 <span style="color:#66d9ef">else</span> .<span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>				<span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>		) <span style="color:#66d9ef">as</span> bonus
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> 
+</span></span><span style="display:flex;"><span>	emp e,
+</span></span><span style="display:flex;"><span>	emp_bonus eb,
+</span></span><span style="display:flex;"><span>	(
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">select</span> deptno, <span style="color:#66d9ef">sum</span>(sal) <span style="color:#66d9ef">as</span> total_sal
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>			deptno <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> 
+</span></span><span style="display:flex;"><span>			deptno 
+</span></span><span style="display:flex;"><span>	) d
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> e.deptno <span style="color:#f92672">=</span> d.deptno
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">and</span> e.empno <span style="color:#f92672">=</span> eb.empno 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> d.deptno, d.total_sal
+</span></span><span style="display:flex;"><span>	
+</span></span></code></pre></div><h3 id="310-performing-outer-joins-when-using-aggregates">
+  3.10: Performing Outer Joins When Using Aggregates
+  <a class="anchor" href="#310-performing-outer-joins-when-using-aggregates">#</a>
+</h3>
+<p>This is the same example but assuming you there are people with NULL bonuses  so on the left outer join and the case you need to be aware of that:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> 
+</span></span><span style="display:flex;"><span>	x.deptno,
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">sum</span>(x.sal),
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">sum</span>(x.bonus)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> (
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> 
+</span></span><span style="display:flex;"><span>e.empno,
+</span></span><span style="display:flex;"><span>e.sal,
+</span></span><span style="display:flex;"><span>e.deptno,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">sum</span>(
+</span></span><span style="display:flex;"><span>	e.sal <span style="color:#f92672">*</span> <span style="color:#66d9ef">case</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">when</span> eb.<span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">then</span> .<span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">when</span> eb.<span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">then</span> .<span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">when</span> eb.<span style="color:#e6db74">&#34;type&#34;</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span> <span style="color:#66d9ef">then</span> .<span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">end</span>
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">as</span> bonus
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">from</span> emp e 
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">left</span> <span style="color:#66d9ef">outer</span> <span style="color:#66d9ef">join</span> emp_bonus eb <span style="color:#66d9ef">on</span> eb.empno <span style="color:#f92672">=</span> e.empno
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">inner</span> <span style="color:#66d9ef">join</span> dept d <span style="color:#66d9ef">on</span> e.deptno <span style="color:#f92672">=</span> d.deptno 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> d.deptno <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> e.empno , e.sal, e.deptno
+</span></span><span style="display:flex;"><span>) x <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> deptno
+</span></span></code></pre></div><h2 id="chapter-4-inserting-updating-and-deleting">
+  Chapter 4: Inserting, Updating, and Deleting
+  <a class="anchor" href="#chapter-4-inserting-updating-and-deleting">#</a>
+</h2>
+<h3 id="41-inserting-records-tips">
+  4.1 Inserting records (tips)
+  <a class="anchor" href="#41-inserting-records-tips">#</a>
+</h3>
+<p>You can do multiple inserts at the same time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">/* multi row insert */</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> dept (deptno,dname,loc)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">values</span> (<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;A&#39;</span>,<span style="color:#e6db74">&#39;B&#39;</span>), (<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;B&#39;</span>,<span style="color:#e6db74">&#39;C&#39;</span>)
+</span></span></code></pre></div><p>Also if you want to insert a column default value you will do:</p>
+<h3 id="42-inserting-default-values">
+  4.2 Inserting Default Values
+  <a class="anchor" href="#42-inserting-default-values">#</a>
+</h3>
+<p>All brands support the use of the DEFAULT keyword.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> D <span style="color:#66d9ef">values</span> (<span style="color:#66d9ef">values</span>)
+</span></span></code></pre></div><p>Also for tables with default values in multiple columns excluding the column will mean the brand of database will automatically insert the default value for that column.</p>
+<h3 id="43-overriding-a-default-value-with-null">
+  4.3 Overriding a default value with NULL
+  <a class="anchor" href="#43-overriding-a-default-value-with-null">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">/* table: create table (id integer default 0, foo varchar(20))
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">insert into d (id,foo) values (null, &#39;Brighten&#39;)
+</span></span></span></code></pre></div><h3 id="44-copying-the-rows-from-one-table-into-another-very-useful">
+  4.4 Copying the rows from one table into another (Very Useful)
+  <a class="anchor" href="#44-copying-the-rows-from-one-table-into-another-very-useful">#</a>
+</h3>
+<p>So far one of the most useful commands for data recovery and upgrading existing tables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> dept_east (deptno, dname, loc)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> deptno, dname, loc
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> dept
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> loc <span style="color:#66d9ef">in</span> (<span style="color:#e6db74">&#39;NEW YORK&#39;</span>, <span style="color:#e6db74">&#39;BOSTON&#39;</span>)
+</span></span></code></pre></div><h3 id="45-copying-a-table-definition-very-useful">
+  4.5 Copying a Table Definition (Very Useful)
+  <a class="anchor" href="#45-copying-a-table-definition-very-useful">#</a>
+</h3>
+<p>You want to create a table having the same set of column as the existing columns, but <strong>no rows</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">table</span> dept_2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">as</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> dept
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><p>When using <strong>CTAS - Create Table as Select</strong>, all rows from your query will be used to populate the new table you are creating unless you specify a false condition in the WHERE clause.</p>
+<h3 id="48-modifying-records-in-a-table">
+  4.8 Modifying Records in a Table
+  <a class="anchor" href="#48-modifying-records-in-a-table">#</a>
+</h3>
+<p>Use the UPDATE statement to modify existing rows in a database table. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">update</span> emp
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">set</span> sal <span style="color:#f92672">=</span> sal<span style="color:#f92672">*</span><span style="color:#ae81ff">1</span>.<span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> deptno <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>
+</span></span></code></pre></div><h3 id="49-updating-when-corresponding-rows-exists">
+  4.9 Updating when corresponding rows exists
+  <a class="anchor" href="#49-updating-when-corresponding-rows-exists">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">update</span> emp
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">set</span> sal<span style="color:#f92672">=</span>sal<span style="color:#f92672">*</span><span style="color:#ae81ff">1</span>.<span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> empno <span style="color:#66d9ef">in</span> (<span style="color:#66d9ef">select</span> empno <span style="color:#66d9ef">from</span> emp_bonus)
+</span></span></code></pre></div><h3 id="410-updating-with-values-from-another-table">
+  4.10 Updating with Values from Another Table
+  <a class="anchor" href="#410-updating-with-values-from-another-table">#</a>
+</h3>
+<p>In <code>PostgreSQL</code> you can do the next method to conveniently update joining with another table:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">update</span> emp
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">set</span> 
+</span></span><span style="display:flex;"><span>    sal <span style="color:#f92672">=</span> ns.sal,
+</span></span><span style="display:flex;"><span>    comm <span style="color:#f92672">=</span> ns.sal<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> new_sal ns
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> ns.deptno <span style="color:#f92672">=</span> emp.deptno
+</span></span></code></pre></div><h3 id="415-deleting-referential-integrity-violations">
+  4.15 Deleting Referential Integrity Violations
+  <a class="anchor" href="#415-deleting-referential-integrity-violations">#</a>
+</h3>
+<p>Using the NOT IN alternative I find it more readable</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> deptno <span style="color:#66d9ef">not</span> <span style="color:#66d9ef">in</span> (<span style="color:#66d9ef">select</span> deptno <span style="color:#66d9ef">from</span> dept)
+</span></span></code></pre></div><h3 id="417-deleting-records-referenced-from-another-table">
+  4.17 Deleting Records Referenced from Another Table
+  <a class="anchor" href="#417-deleting-records-referenced-from-another-table">#</a>
+</h3>
+<p>Using a subquery and the aggregation functions like count you can find the departments with three or more accidents. Then delete all employees working in those departments:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> emp
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> deptno <span style="color:#66d9ef">in</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">select</span> deptno
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> dept_accidents
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">group</span> <span style="color:#66d9ef">by</span> deptno
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">having</span> <span style="color:#66d9ef">count</span>(<span style="color:#f92672">*</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><h2 id="chapter-5-metadata-queries">
+  Chapter 5: Metadata Queries
+  <a class="anchor" href="#chapter-5-metadata-queries">#</a>
+</h2>
+<h3 id="51-listing-tables-in-a-schema">
+  5.1 Listing Tables in a Schema
+  <a class="anchor" href="#51-listing-tables-in-a-schema">#</a>
+</h3>
+<p>In postgres the information of the database is done through the table INFORMATION_SCHEMA.TABLES:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> information_schema.tables
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> table_schema <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;SMEAGOL&#39;</span>
+</span></span></code></pre></div><p>So basically tables have this mechanism of  exposing their own information about themselves in a manner of tables and views just as other information is exposed.</p>
+<h3 id="52-listing-tables-columns">
+  5.2 Listing Table&rsquo;s Columns
+  <a class="anchor" href="#52-listing-tables-columns">#</a>
+</h3>
+<p>In postgres the information of the database is done through the table INFORMATION_SCHEMA.COLUMNS:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">column_name</span>, data_type, ordinal_position
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> information_schema.columns
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> 
+</span></span><span style="display:flex;"><span>  table_schema <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;SMEAGOL&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">and</span> <span style="color:#66d9ef">table_name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;EMP&#39;</span>
+</span></span></code></pre></div><h3 id="53-listing-indexed-columns-for-a-table">
+  5.3 Listing Indexed Columns for a Table
+  <a class="anchor" href="#53-listing-indexed-columns-for-a-table">#</a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> a.tablename, a.indexname, b.<span style="color:#66d9ef">column_name</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">from</span> 
+</span></span><span style="display:flex;"><span>    pg_catalog.pg_indexes a,
+</span></span><span style="display:flex;"><span>    information_schema.columns b
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">where</span>
+</span></span><span style="display:flex;"><span>    a.schemaname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;SMEAGOL&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">and</span> a.tablename <span style="color:#f92672">=</span> b.<span style="color:#66d9ef">table_name</span>
+</span></span></code></pre></div><p>When it comes to queries, it&rsquo;s important to know what columns are/aren&rsquo;t indexed. Indexes can provide good performance for queries against columns that are frequently used in filters and that are fairly selective. Indexes are also useful when joining between tables.</p>
+<p>Links:</p>
 <ul>
 <li>
 <p>Documentations:
@@ -534,7 +779,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#chapter-1--retrieving-records">Chapter 1:  Retrieving Records</a>
+    <li><a href="#chapter-1-retrieving-records">Chapter 1: Retrieving Records</a>
       <ul>
         <li><a href="#16-referencing-and-aliased-column-in-the-where-clause">1.6 Referencing and Aliased Column in the WHERE Clause</a></li>
         <li><a href="#110-returning-n-random-records-from-a-table">1.10 Returning n Random Records from a Table</a></li>
@@ -552,6 +797,30 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#31-stacking-one-row-set-atop-another">3.1 Stacking one row set atop another</a></li>
         <li><a href="#32-combining-related-rows">3.2 Combining Related Rows</a></li>
         <li><a href="#34-retrieving-value-from-on-table-that-do-not-exist-in-another">3.4 Retrieving value from on table that do not exist in another</a></li>
+        <li><a href="#38-identifying-and-avoiding-cartesian-products">3.8 Identifying and Avoiding Cartesian Products</a></li>
+        <li><a href="#39-performing-join-when-using-aggregates">3.9 Performing Join When Using Aggregates</a></li>
+        <li><a href="#310-performing-outer-joins-when-using-aggregates">3.10: Performing Outer Joins When Using Aggregates</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-4-inserting-updating-and-deleting">Chapter 4: Inserting, Updating, and Deleting</a>
+      <ul>
+        <li><a href="#41-inserting-records-tips">4.1 Inserting records (tips)</a></li>
+        <li><a href="#42-inserting-default-values">4.2 Inserting Default Values</a></li>
+        <li><a href="#43-overriding-a-default-value-with-null">4.3 Overriding a default value with NULL</a></li>
+        <li><a href="#44-copying-the-rows-from-one-table-into-another-very-useful">4.4 Copying the rows from one table into another (Very Useful)</a></li>
+        <li><a href="#45-copying-a-table-definition-very-useful">4.5 Copying a Table Definition (Very Useful)</a></li>
+        <li><a href="#48-modifying-records-in-a-table">4.8 Modifying Records in a Table</a></li>
+        <li><a href="#49-updating-when-corresponding-rows-exists">4.9 Updating when corresponding rows exists</a></li>
+        <li><a href="#410-updating-with-values-from-another-table">4.10 Updating with Values from Another Table</a></li>
+        <li><a href="#415-deleting-referential-integrity-violations">4.15 Deleting Referential Integrity Violations</a></li>
+        <li><a href="#417-deleting-records-referenced-from-another-table">4.17 Deleting Records Referenced from Another Table</a></li>
+      </ul>
+    </li>
+    <li><a href="#chapter-5-metadata-queries">Chapter 5: Metadata Queries</a>
+      <ul>
+        <li><a href="#51-listing-tables-in-a-schema">5.1 Listing Tables in a Schema</a></li>
+        <li><a href="#52-listing-tables-columns">5.2 Listing Table&rsquo;s Columns</a></li>
+        <li><a href="#53-listing-indexed-columns-for-a-table">5.3 Listing Indexed Columns for a Table</a></li>
       </ul>
     </li>
   </ul>
